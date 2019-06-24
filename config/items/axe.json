@@ -1,0 +1,16 @@
+[
+    {
+        "internal": "axe_0",
+        "name": "Broken Axe",
+        "type": "Axe",
+        "speed": 1,
+        "value": 5
+    },
+    {
+        "internal": "axe_1",
+        "name": "Old Axe",
+        "type": "Axe",
+        "speed": 3,
+        "value": 15
+    }
+]

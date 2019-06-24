@@ -6,8 +6,9 @@ const database = require('./database');
 const client = new discord.Client();
 
 client.on('message', async (msg) => {
-    manager.parse(discord, msg);
+    manager.parse(discord, client, msg);
 });
 
 client.login(secret.token);
+exports.discordclient = client;
 //database.init(secret);

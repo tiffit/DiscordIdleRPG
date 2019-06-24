@@ -1,10 +1,11 @@
 const cmdmap = new Map(
     [
-        ["ping", require('./ping')]
+        ["ping", require('./ping')],
+        ["iteminfo", require('./iteminfo')]
     ]
 );
 
-exports.parse = async(discord, msg) => {
+exports.parse = async(discord, bot, msg) => {
     if (msg.author.bot) return;
     const prefix = "$";
     const content = msg.content;
@@ -13,6 +14,6 @@ exports.parse = async(discord, msg) => {
     const command_name = words[0].substring(prefix.length).toLowerCase();
     const args = words.slice(1);
     if(cmdmap.has(command_name)){
-        cmdmap.get(command_name).run(discord, args, msg.author, msg.channel);
+        cmdmap.get(command_name).run(discord, bot, args, msg.author, msg.channel);
     }
 }
