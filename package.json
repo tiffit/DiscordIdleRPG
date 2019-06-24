@@ -1,0 +1,11 @@
+{
+  "name": "idlerpg",
+  "version": "1.0.0",
+  "description": "Bot made for Discord Hackweek 2019",
+  "main": "main.js",
+  "author": "tiffit, Abstractless",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "mysql": "^2.17.1"
+  }
+}
