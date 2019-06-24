@@ -2,11 +2,11 @@ var mysql = require('mysql');
 
 var connection;
 
-exports.init = function(config){
+exports.init = function(secret){
     connection = mysql.createConnection({
-    host: config.dbaddress,
-    user: config.dbusername,
-    password: config.dbpassword
+    host: secret.dbaddress,
+    user: secret.dbusername,
+    password: secret.dbpassword
     });
     connection.connect(function(err) {
         if (err) throw err;
