@@ -17,4 +17,3 @@ client.on('ready', () => {
 
 client.login(secret.token);
 exports.discordclient = client;
-//database.init(secret);

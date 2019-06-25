@@ -7,7 +7,6 @@ var connection;
  * @param {Object} secret Secret config that should never be pushed.
  */
 exports.init = function(secret){
-    console.log(`test`);
     connection = mysql.createConnection({
     host: secret.dbaddress,
     user: secret.dbusername,
@@ -38,7 +37,7 @@ exports.getUserObj = (userId, guildId, callback) => {
  * @desc inserts a new user in to database.
  * @param {Object} userObj Object containing userId and userGuild.
  */
-exports.putUserObj = (userObj) => {
+exports.insertUserObj = (userObj) => {
     var query = `INSERT INTO rpgidle.users (user, guild) VALUES ?`
     values = [
         [userObj.user, userObj.guild]

@@ -5,8 +5,10 @@ exports.run = function (discord, bot, args, member, channel) {
         channel.send("Usage: iteminfo <item name>");
     }
     const item_name = args.join(" ").toLowerCase();
+    var found = false;
     items.list.forEach((item) => {
-        if (item.name.toLowerCase() === item_name) {
+        if (!found && item.name.toLowerCase() === item_name) {
+            found = true;
             const embed = new discord.RichEmbed()
                 .setTimestamp()
                 .setColor([24, 224, 200])
@@ -17,7 +19,6 @@ exports.run = function (discord, bot, args, member, channel) {
             if (typeof item.speed !== 'undefined') embed.addField("Speed", item.speed, true);
             embed.addField("Sell Value", item.value + " Gold", true);
             channel.send(embed);
-            return;
         }
     });
 }

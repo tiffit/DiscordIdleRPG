@@ -8,13 +8,6 @@ const cmdmap = new Map(
     ]
 );
 
-var axe = require('../config/items/axe.json');
-
-exports.itemArray = () => {
-    const itemArray = [axe];
-    return itemArray;
-}
-
 exports.parse = async(discord, bot, msg) => {
     if (msg.author.bot) return;
     const prefix = "$";

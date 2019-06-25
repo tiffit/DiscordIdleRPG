@@ -5,7 +5,7 @@ var manager = require('./manager');
  * @desc displays shop
  */
 exports.run = async function (discord, bot, args, author, channel) {
-    var items = manager.itemArray()[0];
+    var items = items.list;
     var pageAmount = Math.ceil(items.length / 8);
 
     var shopEmbed = new discord.RichEmbed()
@@ -29,7 +29,7 @@ exports.run = async function (discord, bot, args, author, channel) {
         }
     }
 
-    channel.send(shopEmbed).then(async msg => {
+    channel.send(shopEmbed).then(async (msg) => {
         const filter = m => m.content.startsWith('$');
 
         // variable is set to true whenever the user types in %close
