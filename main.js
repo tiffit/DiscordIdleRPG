@@ -7,7 +7,13 @@ const client = new discord.Client();
 
 client.on('message', async (msg) => {
     manager.parse(discord, client, msg);
+    
 });
+
+client.on('ready', () => {
+    database.init(secret);
+    console.log(`Connected to Discord`);
+})
 
 client.login(secret.token);
 exports.discordclient = client;

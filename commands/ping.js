@@ -1,4 +1,3 @@
-exports.run = function(discord, args, author, channel){
-    console.log(channel);
+exports.run = function(discord, args, member, channel){
     channel.send("Pong!");
 }
