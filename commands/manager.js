@@ -1,3 +1,5 @@
+const main = require("./../main");
+
 const cmdmap = new Map(
     [
         ["ping", require('./ping')],
@@ -11,7 +13,7 @@ const cmdmap = new Map(
 
 exports.parse = async(discord, bot, msg) => {
     if (msg.author.bot) return;
-    const prefix = "$";
+    const prefix = main.properties.prefix;
     const content = msg.content;
     if(!content.startsWith(prefix))return;
     const words = content.split(" ");

@@ -1,10 +1,12 @@
 const itemloader = require('./../items');
 const items = require('./../config/shop.json')
+const main = require("./../main");
 
 /**
  * @desc displays shop
  */
 exports.run = async function (discord, bot, args, member, channel) {
+    const prefix = main.properties.prefix;
     var pageAmount = Math.ceil(items.length / 8);
 
     var shopEmbed = createEmbed(discord, bot, member, 1, pageAmount);
@@ -25,7 +27,7 @@ exports.run = async function (discord, bot, args, member, channel) {
     }
 
     channel.send(shopEmbed).then(async (msg) => {
-        const filter = m => m.content.startsWith('$') && m.member.user.id === member.user.id;
+        const filter = m => m.content.startsWith(prefix) && m.member.user.id === member.user.id;
 
         // variable is set to true whenever the user types in %close
         var isClosed = false;
@@ -37,9 +39,9 @@ exports.run = async function (discord, bot, args, member, channel) {
             }).then(async (collected) => {
                 var message = collected.find(message => message).content
                 // user close event
-                if (message === "$close") {
+                if (message === `${prefix}close`) {
                     test = false;
-                } else if (message === "$next") {
+                } else if (message === `${prefix}next`) {
                     var nextEmbed = createEmbed(discord, bot, member, page, pageAmount);
 
                     for (var i = ind; i < ind + 9 || items.length; i++) {
@@ -54,7 +56,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                         }
                     };
                     msg.edit(nextEmbed)
-                } else if (message === "$last") {
+                } else if (message === `${prefix}last`) {
                     var lastEmbed = createEmbed(discord, bot, member, page, pageAmount);
 
 
@@ -78,9 +80,10 @@ exports.run = async function (discord, bot, args, member, channel) {
 }
 
 function createEmbed(discord, bot, member, page, pageAmount){
+    const prefix = main.properties.prefix;
     return new discord.RichEmbed()
         .setTimestamp()
         .setColor([244, 194, 66])
         .setAuthor("Shop", bot.user.displayAvatarURL)
-        .setFooter(`%last for previous, %next for next. Page ${page}/${pageAmount}`, member.user.avatarURL);
+        .setFooter(`${prefix}last for previous, ${prefix}next for next. Page ${page}/${pageAmount}`, member.user.avatarURL);
 }

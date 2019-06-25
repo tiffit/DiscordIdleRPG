@@ -1,5 +1,6 @@
 const discord = require('discord.js');
 const secret = require('./config/secret.json');
+const properties = require('./config/prop.json');
 const manager = require('./commands/manager');
 const database = require('./database');
 
@@ -17,3 +18,4 @@ client.on('ready', () => {
 
 client.login(secret.token);
 exports.discordclient = client;
+exports.properties = properties;
