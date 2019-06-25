@@ -15,6 +15,7 @@ exports.run = function (discord, bot, args, member, channel) {
             .setFooter(member.displayName, member.user.avatarURL)
             .setDescription(item.description)
             .addField("Type", item.type, true);
+        if (typeof item.tier !== 'undefined') embed.addField("Tier", item.tier, true);
         if (typeof item.speed !== 'undefined') embed.addField("Speed", item.speed, true);
         embed.addField("Sell Value", item.value + " Gold", true);
         channel.send(embed);

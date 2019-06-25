@@ -8,6 +8,11 @@ exports.run = async function (discord, bot, args, member, channel) {
         }
         channel.send(JSON.stringify(data.inventory));
         if (args.length == 0) {
+            const embed = new discord.RichEmbed()
+                .setTimestamp()
+                .setColor([24, 224, 200])
+                .setAuthor("Inventory", bot.user.displayAvatarURL)
+                .setFooter("Inventory of " + member.displayName, member.user.avatarURL);
             
         }
     });
