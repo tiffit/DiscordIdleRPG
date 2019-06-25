@@ -1,0 +1,83 @@
+[
+    {
+        "internal": "pickaxe_0",
+        "name": "Flint Pickaxe",
+        "tier": 0,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 1,
+        "value": 5
+    },
+    {
+        "internal": "pickaxe_1",
+        "name": "Rock Pickaxe",
+        "tier": 1,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 2,
+        "value": 15
+    },
+    {
+        "internal": "pickaxe_2",
+        "name": "Bronze Pickaxe",
+        "tier": 2,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 4,
+        "value": 30
+    },
+    {
+        "internal": "pickaxe_3",
+        "name": "Iron Pickaxe",
+        "tier": 3,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 7,
+        "value": 60
+    },
+    {
+        "internal": "pickaxe_4",
+        "name": "Steel Pickaxe",
+        "tier": 4,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 10,
+        "value": 100
+    },
+    {
+        "internal": "pickaxe_5",
+        "name": "Diamond Pickaxe",
+        "tier": 5,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 14,
+        "value": 150
+    },
+    {
+        "internal": "pickaxe_6",
+        "name": "Manyllyn Pickaxe",
+        "tier": 6,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 20,
+        "value": 250
+    },
+    {
+        "internal": "pickaxe_7",
+        "name": "Basic Drill",
+        "tier": 7,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 27,
+        "value": 400
+    },
+    {
+        "internal": "pickaxe_8",
+        "name": "High Powered Drill",
+        "tier": 8,
+        "type": "Pickaxe",
+        "description": "TODO",
+        "speed": 50,
+        "value": 750
+    }
+]
