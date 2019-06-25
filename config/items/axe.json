@@ -3,6 +3,7 @@
         "internal": "axe_0",
         "name": "Broken Axe",
         "type": "Axe",
+        "description": "A extremely worn axe that is held together by a bit of twine. It feels like the head could snap off at any moment.",
         "speed": 1,
         "value": 5
     },
@@ -10,77 +11,64 @@
         "internal": "axe_1",
         "name": "Old Axe",
         "type": "Axe",
-        "speed": 3,
+        "description": "An old axe that has definitely seen better day, but at least it still works.",
+        "speed": 2,
         "value": 15
     },
     {
         "internal": "axe_2",
-        "name": "Rusty Axe",
+        "name": "Reliable Axe",
         "type": "Axe",
-        "speed": "5",
-        "value": "25"
+        "description": "An brand new axe that can reliably chop down wood.",
+        "speed": 4,
+        "value": 30
     },
     {
         "internal": "axe_3",
-        "name": "Rusty Axe",
+        "name": "Sharp Axe",
         "type": "Axe",
-        "speed": "5",
-        "value": "25"
+        "description": "An axe that was sharpened by an experienced blacksmith.",
+        "speed": 7,
+        "value": 60
     },
     {
         "internal": "axe_4",
-        "name": "Rusty Axe",
+        "name": "Steel Axe",
         "type": "Axe",
-        "speed": "5",
-        "value": "25"
+        "description": "Made out of high-grade steel, this axe can shop down trees very efficiently.",
+        "speed": 10,
+        "value": 100
     },
     {
-        "internal": "axe_4",
-        "name": "Rusty Axe",
+        "internal": "axe_5",
+        "name": "Pristine Axe",
         "type": "Axe",
-        "speed": "5",
-        "value": "25"
+        "description": "This axe is composed of some of the best material known to man, and it shows.",
+        "speed": 14,
+        "value": 150
     },
     {
-        "internal": "axe_4",
-        "name": "Rusty Axe",
+        "internal": "axe_6",
+        "name": "Impeccable Axe",
         "type": "Axe",
-        "speed": "5",
-        "value": "25"
+        "description": "Forged by the best blacksmiths known to man, this axe cuts wood like butter.",
+        "speed": 20,
+        "value": 250
     },
     {
-        "internal": "axe_4",
-        "name": "Rusty Axe",
+        "internal": "axe_7",
+        "name": "Perfect Axe",
         "type": "Axe",
-        "speed": "5",
-        "value": "25"
+        "description": "Nobody has every seen an axe this strong! It seems to have a faint magic-like glow around it.",
+        "speed": 27,
+        "value": 400
     },
     {
-        "internal": "axe_4",
-        "name": "Rusty Axe",
+        "internal": "axe_8",
+        "name": "Forest's Doom",
         "type": "Axe",
-        "speed": "5",
-        "value": "25"
-    },
-    {
-        "internal": "axe_4",
-        "name": "Rusty Axe",
-        "type": "Axe",
-        "speed": "5",
-        "value": "25"
-    },
-    {
-        "internal": "axe_4",
-        "name": "Rusty Axe",
-        "type": "Axe",
-        "speed": "5",
-        "value": "25"
-    },
-    {
-        "internal": "axe_4",
-        "name": "Rusty Axe",
-        "type": "Axe",
-        "speed": "5",
-        "value": "25"
+        "description": "Who made this and where did it come from? Who knows! With one big swing, this axe fells entire forests.",
+        "speed": 50,
+        "value": 750
     }
 ]

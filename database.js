@@ -29,7 +29,7 @@ exports.getUserObj = (userId, guildId, callback) => {
 
     connection.query(query, (err, result, fields) => {
         if (err) throw err;
-        if (callback) callback(result)
+        if (callback) callback(result[0])
     })
 }
 

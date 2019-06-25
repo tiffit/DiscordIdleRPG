@@ -13,8 +13,9 @@ exports.run = function (discord, bot, args, member, channel) {
                 .setTimestamp()
                 .setColor([24, 224, 200])
                 .setAuthor("Item Info", bot.displayAvatarURL)
+                .setTitle(item.name)
                 .setFooter("", bot.displayAvatarURL)
-                .setDescription(`${item.name} (${item.internal})`)
+                .setDescription(item.description)
                 .addField("Type", item.type, true);
             if (typeof item.speed !== 'undefined') embed.addField("Speed", item.speed, true);
             embed.addField("Sell Value", item.value + " Gold", true);

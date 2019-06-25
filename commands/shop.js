@@ -1,11 +1,11 @@
-var manager = require('./manager');
+const itemloader = require('./../items');
 
 
 /**
  * @desc displays shop
  */
 exports.run = async function (discord, bot, args, author, channel) {
-    var items = items.list;
+    var items = itemloader.list;
     var pageAmount = Math.ceil(items.length / 8);
 
     var shopEmbed = new discord.RichEmbed()
@@ -49,7 +49,7 @@ exports.run = async function (discord, bot, args, author, channel) {
                         .setTimestamp()
                         .setColor([24, 224, 200])
                         .setAuthor("Market", bot.displayAvatarURL)
-                        .setFooter(`<- %last | %next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
+                        .setFooter(`<- $last | $next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
 
                     for (var i = ind; i < ind + 9 || items.length; i++) {
                         if (i >= items.length) {
@@ -68,7 +68,7 @@ exports.run = async function (discord, bot, args, author, channel) {
                         .setTimestamp()
                         .setColor([24, 224, 200])
                         .setAuthor("Market", bot.displayAvatarURL)
-                        .setFooter(`<- %last | %next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
+                        .setFooter(`<- $last | $next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
 
 
                     for (var i = ind; i < ind - 9 || items.length; i--) {
