@@ -38,12 +38,17 @@ exports.getUserObj = (userId, guildId, callback) => {
  * @param {Object} userObj Object containing userId and userGuild.
  */
 exports.insertUserObj = (userObj) => {
-    var query = `INSERT INTO rpgidle.users (user, guild) VALUES ?`
+    var query = `INSERT INTO rpgidle.users (user, guild, inventory, backpack, perks) VALUES ?`
+    var defaultInventory = {
+        equipped: {
+            Axe: "axe_0"
+        },
+        axe_0: 1
+    }
     values = [
-        [userObj.user, userObj.guild]
+        [userObj.user, userObj.guild, JSON.stringify(defaultInventory), "{}", "{}"]
     ]
     connection.query(query, [values], (err, res) => {
         if (err) throw err;
-        console.log(res);
     })
 }

@@ -7,7 +7,6 @@ exports.run = function (discord, bot, args, member, channel) {
     const item_name = args.join(" ");
     const item = items.fromName(item_name);
     if(item){
-        console.log(member);
         const embed = new discord.RichEmbed()
             .setTimestamp()
             .setColor([24, 224, 200])
