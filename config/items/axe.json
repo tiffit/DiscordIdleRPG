@@ -2,6 +2,7 @@
     {
         "internal": "axe_0",
         "name": "Broken Axe",
+        "tier": 0,
         "type": "Axe",
         "description": "A extremely worn axe that is held together by a bit of twine. It feels like the head could snap off at any moment.",
         "speed": 1,
@@ -10,6 +11,7 @@
     {
         "internal": "axe_1",
         "name": "Old Axe",
+        "tier": 1,
         "type": "Axe",
         "description": "An old axe that has definitely seen better day, but at least it still works.",
         "speed": 2,
@@ -18,6 +20,7 @@
     {
         "internal": "axe_2",
         "name": "Reliable Axe",
+        "tier": 2,
         "type": "Axe",
         "description": "An brand new axe that can reliably chop down wood.",
         "speed": 4,
@@ -26,6 +29,7 @@
     {
         "internal": "axe_3",
         "name": "Sharp Axe",
+        "tier": 3,
         "type": "Axe",
         "description": "An axe that was sharpened by an experienced blacksmith.",
         "speed": 7,
@@ -34,6 +38,7 @@
     {
         "internal": "axe_4",
         "name": "Steel Axe",
+        "tier": 4,
         "type": "Axe",
         "description": "Made out of high-grade steel, this axe can fell trees very efficiently.",
         "speed": 10,
@@ -42,6 +47,7 @@
     {
         "internal": "axe_5",
         "name": "Pristine Axe",
+        "tier": 5,
         "type": "Axe",
         "description": "This axe is composed of some of the best material known to man, and it shows.",
         "speed": 14,
@@ -50,6 +56,7 @@
     {
         "internal": "axe_6",
         "name": "Impeccable Axe",
+        "tier": 6,
         "type": "Axe",
         "description": "Forged by the best blacksmiths known to man, this axe cuts wood like butter.",
         "speed": 20,
@@ -58,6 +65,7 @@
     {
         "internal": "axe_7",
         "name": "Perfect Axe",
+        "tier": 7,
         "type": "Axe",
         "description": "Nobody has every seen an axe this strong! It seems to have a faint magic-like glow around it.",
         "speed": 27,
@@ -66,6 +74,7 @@
     {
         "internal": "axe_8",
         "name": "Forest's Doom",
+        "tier": 8,
         "type": "Axe",
         "description": "Who made this and where did it come from? Who knows! With one big swing, this axe fells entire forests.",
         "speed": 50,
