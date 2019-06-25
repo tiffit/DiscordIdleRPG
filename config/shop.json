@@ -1,10 +1,14 @@
 [
     {
         "item": "axe_1",
-        "amount": 50
+        "cost": 50
     },
     {
         "item": "axe_2",
-        "amount": 100
+        "cost": 100
+    },
+    {
+        "item": "axe_3",
+        "cost": 300
     }
 ]

@@ -35,7 +35,7 @@
         "internal": "axe_4",
         "name": "Steel Axe",
         "type": "Axe",
-        "description": "Made out of high-grade steel, this axe can shop down trees very efficiently.",
+        "description": "Made out of high-grade steel, this axe can fell trees very efficiently.",
         "speed": 10,
         "value": 100
     },

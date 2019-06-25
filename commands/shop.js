@@ -1,26 +1,25 @@
 const itemloader = require('./../items');
-
+const items = require('./../config/shop.json')
 
 /**
  * @desc displays shop
  */
 exports.run = async function (discord, bot, args, author, channel) {
-    var items = itemloader.list;
     var pageAmount = Math.ceil(items.length / 8);
 
     var shopEmbed = new discord.RichEmbed()
         .setTimestamp()
         .setColor([24, 224, 200])
-        .setAuthor("Market", bot.displayAvatarURL)
+        .setAuthor("Shop", bot.displayAvatarURL)
         .setFooter(`%last for previous, %next for next. Page 1/${pageAmount}`, bot.displayAvatarURL);
 
     // declarations for later
     var page;
     var ind;
 
-    // lists the first 5 items and adds them to the embed dynamically.
-    for (var i = 0; i < 9; i++) {
-        shopEmbed.addField(`${items[i].name}`, `Sells as ${items[i].value} gold`, true);
+    // lists the first 9 items and adds them to the embed dynamically.
+    for (var i = 0; i < Math.min(items.length, 9); i++) {
+        shopEmbed.addField(itemloader.fromInternal(items[i].item).name, `${items[i].cost} Gold`, true);
 
         if (i === 8 || i === items.length) {
             page = 2;
@@ -48,7 +47,7 @@ exports.run = async function (discord, bot, args, author, channel) {
                     var nextEmbed = new discord.RichEmbed()
                         .setTimestamp()
                         .setColor([24, 224, 200])
-                        .setAuthor("Market", bot.displayAvatarURL)
+                        .setAuthor("Shop", bot.displayAvatarURL)
                         .setFooter(`<- $last | $next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
 
                     for (var i = ind; i < ind + 9 || items.length; i++) {
@@ -67,7 +66,7 @@ exports.run = async function (discord, bot, args, author, channel) {
                     var lastEmbed = new discord.RichEmbed()
                         .setTimestamp()
                         .setColor([24, 224, 200])
-                        .setAuthor("Market", bot.displayAvatarURL)
+                        .setAuthor("Shop", bot.displayAvatarURL)
                         .setFooter(`<- $last | $next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
 
 
