@@ -7,7 +7,7 @@ Commands
   * Items
     - iteminfo (COMPLETE)
   * Shop
-    - shop: Lists all items currently being sold, next and last as indicators to go back and forward. close to cancel.
+    - shop: Lists all items currently being sold, next and last as indicators to go back and forward. close to cancel. (COMPLETE)
     - buy: arg 1 is item by name. adds it to users inventory object
     - sell: arg 1 is item by name. check user inventory. confirmation message afterwards. y/n
     - pricecheck: arg 1 is item 
