@@ -12,7 +12,7 @@ client.on('message', async (msg) => {
 
 client.on('ready', () => {
     database.init(secret);
-    console.log(`Connected to Discord`);
+    console.log(`Connected to Discord!`);
 })
 
 client.login(secret.token);

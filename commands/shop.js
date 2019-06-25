@@ -4,14 +4,10 @@ const items = require('./../config/shop.json')
 /**
  * @desc displays shop
  */
-exports.run = async function (discord, bot, args, author, channel) {
+exports.run = async function (discord, bot, args, member, channel) {
     var pageAmount = Math.ceil(items.length / 8);
 
-    var shopEmbed = new discord.RichEmbed()
-        .setTimestamp()
-        .setColor([24, 224, 200])
-        .setAuthor("Shop", bot.displayAvatarURL)
-        .setFooter(`%last for previous, %next for next. Page 1/${pageAmount}`, bot.displayAvatarURL);
+    var shopEmbed = createEmbed(discord, bot, member, 1, pageAmount);
 
     // declarations for later
     var page;
@@ -29,7 +25,7 @@ exports.run = async function (discord, bot, args, author, channel) {
     }
 
     channel.send(shopEmbed).then(async (msg) => {
-        const filter = m => m.content.startsWith('$');
+        const filter = m => m.content.startsWith('$') && m.member.user.id === member.user.id;
 
         // variable is set to true whenever the user types in %close
         var isClosed = false;
@@ -44,11 +40,7 @@ exports.run = async function (discord, bot, args, author, channel) {
                 if (message === "$close") {
                     test = false;
                 } else if (message === "$next") {
-                    var nextEmbed = new discord.RichEmbed()
-                        .setTimestamp()
-                        .setColor([24, 224, 200])
-                        .setAuthor("Shop", bot.displayAvatarURL)
-                        .setFooter(`<- $last | $next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
+                    var nextEmbed = createEmbed(discord, bot, member, page, pageAmount);
 
                     for (var i = ind; i < ind + 9 || items.length; i++) {
                         if (i >= items.length) {
@@ -63,11 +55,7 @@ exports.run = async function (discord, bot, args, author, channel) {
                     };
                     msg.edit(nextEmbed)
                 } else if (message === "$last") {
-                    var lastEmbed = new discord.RichEmbed()
-                        .setTimestamp()
-                        .setColor([24, 224, 200])
-                        .setAuthor("Shop", bot.displayAvatarURL)
-                        .setFooter(`<- $last | $next -> | Page ${page}/${pageAmount}`, bot.displayAvatarURL);
+                    var lastEmbed = createEmbed(discord, bot, member, page, pageAmount);
 
 
                     for (var i = ind; i < ind - 9 || items.length; i--) {
@@ -87,4 +75,12 @@ exports.run = async function (discord, bot, args, author, channel) {
         }
 
     })
+}
+
+function createEmbed(discord, bot, member, page, pageAmount){
+    return new discord.RichEmbed()
+        .setTimestamp()
+        .setColor([244, 194, 66])
+        .setAuthor("Shop", bot.user.displayAvatarURL)
+        .setFooter(`%last for previous, %next for next. Page ${page}/${pageAmount}`, member.user.avatarURL);
 }

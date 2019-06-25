@@ -13,3 +13,10 @@ exports.fromInternal = function(internal){
     }
     return null;
 }
+
+exports.fromName = function(name){
+    for(var i = 0; i < list.length; i++){
+        if(list[i].name.toLowerCase() === name.toLowerCase())return list[i];
+    }
+    return null;
+}
