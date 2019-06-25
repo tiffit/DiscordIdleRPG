@@ -1,89 +1,63 @@
 const itemloader = require('./../items');
-const items = require('./../config/shop.json')
+const shopobj = require('./../config/shop.json')
 const main = require("./../main");
+
+const cat_per_page = 2;
 
 /**
  * @desc displays shop
  */
 exports.run = async function (discord, bot, args, member, channel) {
-    const prefix = main.properties.prefix;
-    var pageAmount = Math.ceil(items.length / 8);
-
-    var shopEmbed = createEmbed(discord, bot, member, 1, pageAmount);
-
-    // declarations for later
-    var page;
-    var ind;
-
-    // lists the first 9 items and adds them to the embed dynamically.
-    for (var i = 0; i < Math.min(items.length, 9); i++) {
-        shopEmbed.addField(itemloader.fromInternal(items[i].item).name, `${items[i].cost} Gold`, true);
-
-        if (i === 8 || i === items.length) {
-            page = 2;
-            ind = i;
-            break;
-        }
-    }
+    var shopEmbed = createEmbed(discord, bot, member, 0);
 
     channel.send(shopEmbed).then(async (msg) => {
-        const filter = m => m.content.startsWith(prefix) && m.member.user.id === member.user.id;
+        await msg.react('⬅');
+        await msg.react('➡');
+        const filter = (reaction, user) => reaction.emoji.name === '⬅' || '➡' && user.id === member.user.id;
+        const collector = msg.createReactionCollector(filter);
+        collector.on('collect', (r) => {
+            r.users.array().forEach(function(user){
+                if(!user.bot)r.remove(user);
+            });
+            var footer = msg.embeds[0].footer;
+            var page = parseInt(footer.text.substring(5).split("/")[0]) - 1;
+            if(r.emoji.name === '⬅')page--;
+            if(r.emoji.name === '➡')page++;
+            msg.edit(createEmbed(discord, bot, member, page));
+        });
 
-        // variable is set to true whenever the user types in %close
-        var isClosed = false;
-        while (!isClosed) {
-            await msg.channel.awaitMessages(filter, {
-                max: 1,
-                time: 3000000,
-                errors: ['time']
-            }).then(async (collected) => {
-                var message = collected.find(message => message).content
-                // user close event
-                if (message === `${prefix}close`) {
-                    test = false;
-                } else if (message === `${prefix}next`) {
-                    var nextEmbed = createEmbed(discord, bot, member, page, pageAmount);
-
-                    for (var i = ind; i < ind + 9 || items.length; i++) {
-                        if (i >= items.length) {
-                            break;
-                        }
-                        nextEmbed.addField(`${items[i].name}`, `${items[i].value}`, true);
-
-                        if (i > ind + 9) {
-                            page = page + 1;
-                            ind = i;
-                        }
-                    };
-                    msg.edit(nextEmbed)
-                } else if (message === `${prefix}last`) {
-                    var lastEmbed = createEmbed(discord, bot, member, page, pageAmount);
-
-
-                    for (var i = ind; i < ind - 9 || items.length; i--) {
-                        if (i <= 0 ) {
-                            break;
-                        }
-                        lastEmbed.addField(`${items[i].name}`, `${items[i].value}`, true);
-
-                        if (i > ind - 9) {
-                            page = page - 1;
-                            ind = i;
-                        }
-                    };
-                    msg.edit(lastEmbed)
-                }
-            })
-        }
-
-    })
+    });
 }
 
-function createEmbed(discord, bot, member, page, pageAmount){
-    const prefix = main.properties.prefix;
-    return new discord.RichEmbed()
+function createEmbed(discord, bot, member, page){
+    const startIndex = page*cat_per_page;
+    if(startIndex < 0)return createEmbed(discord, bot, member, 0);
+    var categories = Object.keys(shopobj);
+    var cat_count = categories.length;
+    var max_page = Math.floor(cat_count/cat_per_page) - 1;
+    if(startIndex >= cat_count)return createEmbed(discord, bot, member, max_page);
+    var embed = new discord.RichEmbed()
         .setTimestamp()
         .setColor([244, 194, 66])
+        .setDescription(`Use ⬅ and ➡ to go between pages. \`${main.properties.prefix}shop buy <item name>\` to buy an item.`)
         .setAuthor("Shop", bot.user.displayAvatarURL)
-        .setFooter(`${prefix}last for previous, ${prefix}next for next. Page ${page}/${pageAmount}`, member.user.avatarURL);
+        .setFooter(`Page ${page + 1}/${max_page+1}`, member.user.avatarURL);
+    for(var i = startIndex; i < Math.min(cat_count, startIndex + cat_per_page); i++){
+        var cat_obj = shopobj[categories[i]];
+        var cat_keys = Object.keys(cat_obj);
+        var item_index = 0;
+        for(var j = 0; j < 3; j++){
+            var outputstr = "";
+            for(var k = 0; k < 5; k++){
+                if(item_index >= cat_keys.length)continue;
+                var item = itemloader.fromInternal(cat_keys[item_index]);
+                outputstr += `${item.name} T${item.tier}: ${cat_obj[cat_keys[item_index]]}G\n`;
+                item_index++;
+            }
+            var fieldName = j == 0 ? categories[i] : '\u200B';
+            if(outputstr === "")outputstr = '\u200B';
+            embed.addField(fieldName, outputstr, true);
+        }
+    }
+    return embed;
 }

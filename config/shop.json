@@ -7,10 +7,17 @@
         "axe_5": 90,
         "axe_6": 100,
         "axe_7": 110,
-        "axe_8": 120,
-        "axe_8": 130,
-        "axe_8": 5000,
-        "axe_8": 6000,
-        "axe_8": 700000
+        "axe_8": 120
+    },
+    "Pickaxes": {
+        "pickaxe_0": 30,
+        "pickaxe_1": 50,
+        "pickaxe_2": 60,
+        "pickaxe_3": 70,
+        "pickaxe_4": 80,
+        "pickaxe_5": 90,
+        "pickaxe_6": 100,
+        "pickaxe_7": 110,
+        "pickaxe_8": 120
     }
 }
