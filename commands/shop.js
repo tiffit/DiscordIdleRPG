@@ -14,7 +14,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         await msg.react('⬅');
         await msg.react('➡');
         const filter = (reaction, user) => reaction.emoji.name === '⬅' || '➡' && user.id === member.user.id;
-        const collector = msg.createReactionCollector(filter);
+        const collector = msg.createReactionCollector(filter, { time: 15000 });
         collector.on('collect', (r) => {
             r.users.array().forEach(function(user){
                 if(!user.bot)r.remove(user);
@@ -51,7 +51,7 @@ function createEmbed(discord, bot, member, page){
             for(var k = 0; k < 5; k++){
                 if(item_index >= cat_keys.length)continue;
                 var item = itemloader.fromInternal(cat_keys[item_index]);
-                outputstr += `${item.name} T${item.tier}: ${cat_obj[cat_keys[item_index]]}G\n`;
+                outputstr += `${item.name}: ${cat_obj[cat_keys[item_index]]}G\n`;
                 item_index++;
             }
             var fieldName = j == 0 ? categories[i] : '\u200B';
