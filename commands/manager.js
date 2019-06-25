@@ -2,11 +2,18 @@ const cmdmap = new Map(
     [
         ["ping", require('./ping')],
         ["iteminfo", require('./iteminfo')],
-        ["fish", require('./fish')],
+        ["shop", require('./shop')],
         ["start", require('./start')],
         ["info", require('./info')]
     ]
 );
+
+var axe = require('../config/items/axe.json');
+
+exports.itemArray = () => {
+    const itemArray = [axe];
+    return itemArray;
+}
 
 exports.parse = async(discord, bot, msg) => {
     if (msg.author.bot) return;

@@ -12,5 +12,75 @@
         "type": "Axe",
         "speed": 3,
         "value": 15
+    },
+    {
+        "internal": "axe_2",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_3",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
+    },
+    {
+        "internal": "axe_4",
+        "name": "Rusty Axe",
+        "type": "Axe",
+        "speed": "5",
+        "value": "25"
     }
 ]
