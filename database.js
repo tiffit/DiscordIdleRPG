@@ -10,7 +10,8 @@ exports.init = function(secret){
     connection = mysql.createConnection({
     host: secret.dbaddress,
     user: secret.dbusername,
-    password: secret.dbpassword
+    password: secret.dbpassword,
+    database: secret.dbname
     });
     connection.connect(function(err) {
         if (err) throw err;
@@ -25,7 +26,7 @@ exports.init = function(secret){
  * @param {Number} guildId Unique ID that is passed to identify which guild the user is sending the message from.
  */
 exports.getUserObj = (userId, guildId, callback) => {
-    var query = `SELECT * FROM rpgidle.users WHERE user=${userId} AND guild=${guildId}`
+    var query = `SELECT * FROM users WHERE user=${userId} AND guild=${guildId}`
 
     connection.query(query, (err, result, fields) => {
         if (err) throw err;
@@ -38,16 +39,30 @@ exports.getUserObj = (userId, guildId, callback) => {
  * @param {Object} userObj Object containing userId and userGuild.
  */
 exports.insertUserObj = (userObj) => {
-    var query = `INSERT INTO rpgidle.users (user, guild, inventory, backpack, perks) VALUES ?`
+    var query = `INSERT INTO users (user, guild, inventory, backpack, perks) VALUES ?`
     var defaultInventory = {
         equipped: {
             Axe: "axe_0"
-        },
-        axe_0: 1
+        }
     }
     values = [
         [userObj.user, userObj.guild, JSON.stringify(defaultInventory), "{}", "{}"]
     ]
+    connection.query(query, [values], (err, res) => {
+        if (err) throw err;
+    })
+}
+
+exports.updateUserObj = (userObj) => {
+    var query = `UPDATE users SET ? WHERE user=${userObj.user} AND guild=${userObj.guild}`;
+    console.log(query);
+    values = {
+        inventory: userObj.inventory,
+        backpack: userObj.backpack,
+        task: userObj.task,
+        gold: userObj.gold,
+        perks: userObj.perks
+    }
     connection.query(query, [values], (err, res) => {
         if (err) throw err;
     })
