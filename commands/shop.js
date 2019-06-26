@@ -77,7 +77,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                             msg.clearReactions();
                             if(r.emoji.name === '✅'){
                                 embed = embed.setTimestamp()
-                                    .setDescription(`Confirmed! \\✅`)
+                                    .setDescription(`Confirmed! ✅`)
                                     .setColor([15, 168, 15]);
                                 msg.edit(embed);
                                 util.addItem(data.inventory, item, amount);
@@ -86,7 +86,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                             }
                             if(r.emoji.name === '❌'){
                                 embed = embed.setTimestamp()
-                                    .setDescription(`Canceled! \\❌`)
+                                    .setDescription(`Canceled! ❌`)
                                     .setColor([168, 15, 15]);
                                 msg.edit(embed);
                             }
@@ -137,8 +137,8 @@ exports.run = async function (discord, bot, args, member, channel) {
                     .addField("Count", amount, true)
                     .addField("Individual Profit", item.value + "G", true)
                     .addField("Total Profit", total_profit+ "G", true)
-                    .addField("Current #", holding+ "G", true)
-                    .addField("New #", new_holing+ "G", true);
+                    .addField("Current #", holding, true)
+                    .addField("New #", new_holing, true);
                     channel.send(embed).then(async (msg) => {
                         await msg.react('✅');
                         await msg.react('❌');
@@ -148,7 +148,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                             msg.clearReactions();
                             if(r.emoji.name === '✅'){
                                 embed = embed.setTimestamp()
-                                    .setDescription(`Confirmed! \\✅`)
+                                    .setDescription(`Confirmed! ✅`)
                                     .setColor([15, 168, 15]);
                                 msg.edit(embed);
                                 util.removeItem(data.inventory, item, amount);
@@ -157,7 +157,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                             }
                             if(r.emoji.name === '❌'){
                                 embed = embed.setTimestamp()
-                                    .setDescription(`Canceled! \\❌`)
+                                    .setDescription(`Canceled! ❌`)
                                     .setColor([168, 15, 15]);
                                 msg.edit(embed);
                             }

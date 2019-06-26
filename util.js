@@ -3,7 +3,7 @@ exports.addItem = function(inventory, item, count){
      if(keys.includes(item.internal)){
          inventory[item.internal] += count;
      }else{
-         inventory.equipped = count;
+         inventory[item.internal] = count;
      }
 }
 
