@@ -20,3 +20,11 @@ exports.removeItem = function(inventory, item, count){
 exports.noAccountMessage = function(){
     return `You have not begun your adventure! Type \`${main.properties.prefix}start\` to begin!`;
 }
+
+exports.getInventoryStorage = function(data){
+    return 350;
+}
+
+exports.getBackpackStorage = function(data){
+    return 100;
+}
