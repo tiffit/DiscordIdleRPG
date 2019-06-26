@@ -31,7 +31,9 @@ exports.getUserObj = (userId, guildId, callback) => {
     connection.query(query, (err, result, fields) => {
         if (err) throw err;
         var res = result[0];
-        formatUserObj(res);
+        if(res){
+          formatUserObj(res);
+        }
         if (callback) callback(res)
     })
 }
