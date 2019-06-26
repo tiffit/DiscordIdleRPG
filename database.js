@@ -31,9 +31,11 @@ exports.getUserObj = (userId, guildId, callback) => {
     connection.query(query, (err, result, fields) => {
         if (err) throw err;
         var res = result[0];
-        res.inventory = JSON.parse(res.inventory);
-        res.backpack = JSON.parse(res.backpack);
-        res.perks = JSON.parse(res.perks);
+        if(res){
+            res.inventory = JSON.parse(res.inventory);
+            res.backpack = JSON.parse(res.backpack);
+            res.perks = JSON.parse(res.perks);
+        }
         if (callback) callback(res)
     })
 }
