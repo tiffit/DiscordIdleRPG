@@ -17,6 +17,15 @@ exports.removeItem = function(inventory, item, count){
      }
 }
 
+exports.getTotalCount = function(inventory){
+    var keys = Object.keys(inventory);
+    var total = 0;
+    for(var i = 0; i < keys.length; i++){
+        total += parseInt(inventory[keys[i]]);
+    }
+    return total;
+}
+
 exports.noAccountMessage = function(){
     return `You have not begun your adventure! Type \`${main.properties.prefix}start\` to begin!`;
 }

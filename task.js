@@ -22,20 +22,23 @@ function runTask(data) {
             utils.addItem(data.backpack, items.fromInternal("wood"), speed);
             database.updateUserObj(data);
         }
-    }else if (data.task === "mining") {
+    } else if (data.task === "mining") {
         const equipped = items.fromInternal(inv.equipped.Pickaxe);
         if (equipped) {
             var speed = equipped.speed;
-            for(var i = 0; i < speed; i++){
+            for (var i = 0; i < speed; i++) {
                 var item_type = "";
                 var rand = Math.random();
-                if(rand > .20)item_type = "rock";
-                else if(rand > .06)item_type = "iron";
-                else if(rand > .01)item_type = "diamond";
+                if (rand > .20) item_type = "rock";
+                else if (rand > .06) item_type = "iron";
+                else if (rand > .01) item_type = "diamond";
                 else item_type = "strengonine";
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
             }
-            database.updateUserObj(data);
         }
     }
+    if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
+        data.task = "idle";
+    }
+    database.updateUserObj(data);
 }
