@@ -38,6 +38,15 @@ exports.getUserObj = (userId, guildId, callback) => {
     })
 }
 
+exports.getAllUsers = (callback) => {
+    query = `SELECT * FROM users`;
+
+    connection.query(query, (err, result, fields) => {
+        if (err) throw err;
+        if (callback) callback(result);
+    })
+}
+
 /**
  * @desc inserts a new user in to database.
  * @param {Object} userObj Object containing userId and userGuild.

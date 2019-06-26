@@ -7,7 +7,8 @@ const cmdmap = new Map(
         ["shop", require('./shop')],
         ["start", require('./start')],
         ["info", require('./info')],
-        ["inventory", require('./inventory')]
+        ["inventory", require('./inventory')],
+        ["woodcutting", require('./woodcutting')]
     ]
 );
 
