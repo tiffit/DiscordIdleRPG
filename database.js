@@ -32,11 +32,19 @@ exports.getUserObj = (userId, guildId, callback) => {
         if (err) throw err;
         var res = result[0];
         if(res){
-            res.inventory = JSON.parse(res.inventory);
-            res.backpack = JSON.parse(res.backpack);
-            res.perks = JSON.parse(res.perks);
+          formatUserObj(res);
         }
         if (callback) callback(res)
+    })
+}
+
+exports.getAllUsers = (callback) => {
+    query = `SELECT * FROM users;`;
+
+    connection.query(query, (err, result, fields) => {
+        if (err) throw err;
+        result.forEach((data) => formatUserObj(data));
+        if (callback) callback(result);
     })
 }
 
@@ -71,4 +79,10 @@ exports.updateUserObj = (userObj) => {
     connection.query(query, [values], (err, res) => {
         if (err) throw err;
     })
+}
+
+function formatUserObj(data){
+    data.inventory = JSON.parse(data.inventory);
+    data.backpack = JSON.parse(data.backpack);
+    data.perks = JSON.parse(data.perks);
 }
