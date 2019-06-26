@@ -1,9 +1,10 @@
-var db = require('../database')
+const db = require('../database');
+const util = require('../util');
 
 exports.run = async function (discord, bot, args, member, channel) {
     await db.getUserObj(member.id, member.guild.id, (data) => {
         if(data == null){
-            channel.send(`You have not begun your adventure! Type \`${main.properties.prefix}start\` to begin!`);
+            channel.send(util.noAccountMessage());
             return;
         }
         const embed = new discord.RichEmbed()

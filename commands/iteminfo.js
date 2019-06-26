@@ -1,6 +1,6 @@
 const items = require('./../items');
 
-exports.run = function (discord, bot, args, member, channel) {
+exports.run = async function (discord, bot, args, member, channel) {
     if (args.length == 0) {
         channel.send("Usage: iteminfo <item name>");
     }

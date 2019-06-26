@@ -12,7 +12,7 @@ const cat_per_page = 2;
 exports.run = async function (discord, bot, args, member, channel) {
     await db.getUserObj(member.id, member.guild.id, (data) => {
         if(data == null){
-            channel.send(`You have not begun your adventure! Type \`${main.properties.prefix}start\` to begin!`);
+            channel.send(util.noAccountMessage());
             return;
         }
         if(args.length > 0){

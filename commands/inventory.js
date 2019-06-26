@@ -1,10 +1,11 @@
 const db = require("./../database");
 const itemloader = require('./../items');
+const util = require('../util');
 
 exports.run = async function (discord, bot, args, member, channel) {
     await db.getUserObj(member.id, member.guild.id, (data) => {
         if(data == null){
-            channel.send("You have not begun your adventure! Type `$start` to begin!");
+            channel.send(util.noAccountMessage());
             return;
         }
         var equipment = "";
@@ -24,7 +25,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         for (let [internal, count] of Object.entries(data.inventory)) {
             if(internal === "equipped")continue;
             var item = itemloader.fromInternal(internal);
-            invStr += `${item.name} x${count} --- ${item.tier ? "(T"+ item.tier + ") ": ""}[${item.value}G]`
+            invStr += `${item.name} x${count} [${item.value}G each | ${item.value * count}G total]`
         }
         if(invStr === "")invStr = "Inventory is empty!";
         embed.addField("Inventory", invStr);

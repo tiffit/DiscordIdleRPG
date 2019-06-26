@@ -16,7 +16,7 @@ client.on('ready', () => {
     database.init(secret);
     console.log(`Connected to Discord!`);
 
-    setInterval(() => task.runTasks(), 1000);
+    setInterval(() => task.runTasks(), 1000*60);
     console.log(`Started Task Interval!`);
 })
 
