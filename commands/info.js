@@ -3,7 +3,7 @@ var db = require('../database')
 exports.run = async function (discord, bot, args, member, channel) {
     await db.getUserObj(member.id, member.guild.id, (data) => {
         if(data == null){
-            channel.send("You have not begun your adventure! Type `$start` to begin!");
+            channel.send(`You have not begun your adventure! Type \`${main.properties.prefix}start\` to begin!`);
             return;
         }
         const embed = new discord.RichEmbed()

@@ -30,7 +30,11 @@ exports.getUserObj = (userId, guildId, callback) => {
 
     connection.query(query, (err, result, fields) => {
         if (err) throw err;
-        if (callback) callback(result[0])
+        var res = result[0];
+        res.inventory = JSON.parse(res.inventory);
+        res.backpack = JSON.parse(res.backpack);
+        res.perks = JSON.parse(res.perks);
+        if (callback) callback(res)
     })
 }
 
@@ -55,13 +59,12 @@ exports.insertUserObj = (userObj) => {
 
 exports.updateUserObj = (userObj) => {
     var query = `UPDATE users SET ? WHERE user=${userObj.user} AND guild=${userObj.guild}`;
-    console.log(query);
     values = {
-        inventory: userObj.inventory,
-        backpack: userObj.backpack,
+        inventory: JSON.stringify(userObj.inventory),
+        backpack: JSON.stringify(userObj.backpack),
         task: userObj.task,
         gold: userObj.gold,
-        perks: userObj.perks
+        perks: JSON.stringify(userObj.perks)
     }
     connection.query(query, [values], (err, res) => {
         if (err) throw err;
