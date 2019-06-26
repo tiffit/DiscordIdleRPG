@@ -1,3 +1,5 @@
+const main = require('./main');
+
 exports.addItem = function(inventory, item, count){
      var keys = Object.keys(inventory);
      if(keys.includes(item.internal)){
@@ -13,4 +15,8 @@ exports.removeItem = function(inventory, item, count){
          inventory[item.internal] -= count;
          if(inventory[item.internal] <= 0)delete inventory[item.internal];
      }
+}
+
+exports.noAccountMessage = function(){
+    return `You have not begun your adventure! Type \`${main.properties.prefix}start\` to begin!`;
 }
