@@ -16,7 +16,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         var invStr = "";
         for (let [internal, count] of Object.entries(data.backpack)) {
             var item = itemloader.fromInternal(internal);
-            invStr += `${item.name} x${count} [${item.value}G each | ${item.value * count}G total]`
+            invStr += `${item.name} x${count} [${item.value}G each | ${item.value * count}G total]\n`
         }
         if(invStr === "")invStr = "Backpack is empty!";
         embed.addField("Contents", invStr);

@@ -31,6 +31,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                         util.addItem(data.inventory, old, 1);
                     }
                     channel.send("Equipped!");
+                    db.updateUserObj(data);
                 }else{
                     channel.send(name + " is not a usable item!");
                     return;
@@ -40,10 +41,10 @@ exports.run = async function (discord, bot, args, member, channel) {
         }
         var equipment = "";
         equipment += "**Axe:** " + (equips.Axe ? itemloader.fromInternal(equips.Axe).name : "") + "\n";
-        equipment += "**Pickaxe:** " + (equips.Pickaxe ? itemloader.fromInternal(equips.Pickaxe) : "") + "\n";
-        equipment += "**Fishing Rod:** " + (equips.Fishing_Rod ? itemloader.fromInternal(equips.Fishing_Rod) : "") + "\n";
-        equipment += "**Sword:** " + (equips.Sword ? itemloader.fromInternal(equips.Sword) : "") + "\n";
-        equipment += "**Armor:** " + (equips.Armor ? itemloader.fromInternal(equips.Armor) : "");
+        equipment += "**Pickaxe:** " + (equips.Pickaxe ? itemloader.fromInternal(equips.Pickaxe).name : "") + "\n";
+        equipment += "**Fishing Rod:** " + (equips.Fishing_Rod ? itemloader.fromInternal(equips.Fishing_Rod).name : "") + "\n";
+        equipment += "**Sword:** " + (equips.Sword ? itemloader.fromInternal(equips.Sword).name : "") + "\n";
+        equipment += "**Armor:** " + (equips.Armor ? itemloader.fromInternal(equips.Armor).name : "");
         const embed = new discord.RichEmbed()
             .setTimestamp()
             .setColor([24, 224, 200])
@@ -55,7 +56,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         for (let [internal, count] of Object.entries(data.inventory)) {
             if(internal === "equipped")continue;
             var item = itemloader.fromInternal(internal);
-            invStr += `${item.name} x${count} [${item.value}G each | ${item.value * count}G total]`
+            invStr += `${item.name} x${count} [${item.value}G each | ${item.value * count}G total]\n`
         }
         if(invStr === "")invStr = "Inventory is empty!";
         embed.addField("Inventory", invStr);
