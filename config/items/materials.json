@@ -5,5 +5,33 @@
         "type": "Material",
         "description": "TODO",
         "value": 1
+    },
+    {
+        "internal": "rock",
+        "name": "Rock",
+        "type": "Material",
+        "description": "TODO",
+        "value": 0.25
+    },
+    {
+        "internal": "iron",
+        "name": "Iron",
+        "type": "Material",
+        "description": "TODO",
+        "value": 2
+    },
+    {
+        "internal": "diamond",
+        "name": "Diamond",
+        "type": "Material",
+        "description": "TODO",
+        "value": 15
+    },
+    {
+        "internal": "strengonine",
+        "name": "Strengonine",
+        "type": "Material",
+        "description": "TODO",
+        "value": 35
     }
 ]

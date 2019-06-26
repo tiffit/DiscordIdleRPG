@@ -1,7 +1,7 @@
 [
     {
         "internal": "pickaxe_0",
-        "name": "Flint Pickaxe",
+        "name": "Wooden Pickaxe",
         "tier": 0,
         "type": "Pickaxe",
         "description": "TODO",
@@ -19,7 +19,7 @@
     },
     {
         "internal": "pickaxe_2",
-        "name": "Bronze Pickaxe",
+        "name": "Imperfect Iron Pickaxe",
         "tier": 2,
         "type": "Pickaxe",
         "description": "TODO",
@@ -28,7 +28,7 @@
     },
     {
         "internal": "pickaxe_3",
-        "name": "Iron Pickaxe",
+        "name": "Strong Iron Pickaxe",
         "tier": 3,
         "type": "Pickaxe",
         "description": "TODO",
