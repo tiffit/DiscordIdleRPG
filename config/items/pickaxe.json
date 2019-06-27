@@ -4,16 +4,16 @@
         "name": "Wooden Pickaxe",
         "tier": 0,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "An old pickaxe, made of trusty oak, held together by loosely knotted rope.",
         "speed": 1,
         "value": 5
     },
     {
         "internal": "pickaxe_1",
-        "name": "Rock Pickaxe",
+        "name": "Stone Pickaxe",
         "tier": 1,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "A slightly less worn, and sturdier pickaxe. Made of rock harvested from nearby cliff sides.",
         "speed": 2,
         "value": 15
     },
@@ -22,7 +22,7 @@
         "name": "Imperfect Iron Pickaxe",
         "tier": 2,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "An ameteurs work to be sure, yet a tool that works well for mining.",
         "speed": 4,
         "value": 30
     },
@@ -31,7 +31,7 @@
         "name": "Strong Iron Pickaxe",
         "tier": 3,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "Forged by an experienced blacksmith, this pickaxe can strike stone with no issue.",
         "speed": 7,
         "value": 60
     },
@@ -40,7 +40,7 @@
         "name": "Steel Pickaxe",
         "tier": 4,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "A masterfully made bit of equipment, known as the industry standard for your job.",
         "speed": 10,
         "value": 100
     },
@@ -49,7 +49,7 @@
         "name": "Diamond Pickaxe",
         "tier": 5,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "A valuable tool, often lasting those who utilize them 'til the end of their days.",
         "speed": 14,
         "value": 150
     },
@@ -58,7 +58,7 @@
         "name": "Manyllyn Pickaxe",
         "tier": 6,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "Crafted by those in the upper most echelon of metalsmiths.",
         "speed": 20,
         "value": 250
     },
@@ -67,7 +67,7 @@
         "name": "Basic Drill",
         "tier": 7,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "Ususally utilized for business mining operations, this tool is a force to be reckoned with.",
         "speed": 27,
         "value": 400
     },
@@ -76,7 +76,7 @@
         "name": "High Powered Drill",
         "tier": 8,
         "type": "Pickaxe",
-        "description": "TODO",
+        "description": "Approaching the quarry, you can feel the rocks tremble in fear from the power of this drill.",
         "speed": 50,
         "value": 750
     }
