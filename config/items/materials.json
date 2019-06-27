@@ -3,35 +3,35 @@
         "internal": "wood",
         "name": "Wood",
         "type": "Material",
-        "description": "TODO",
+        "description": "Obtained from woodcutting.",
         "value": 1
     },
     {
         "internal": "rock",
         "name": "Rock",
         "type": "Material",
-        "description": "TODO",
+        "description": "What you usually find when you go mining.",
         "value": 0.25
     },
     {
         "internal": "iron",
         "name": "Iron",
         "type": "Material",
-        "description": "TODO",
+        "description": "You can sometimes find this when mining.",
         "value": 2
     },
     {
         "internal": "diamond",
         "name": "Diamond",
         "type": "Material",
-        "description": "TODO",
+        "description": "A rare find for a miner.",
         "value": 15
     },
     {
         "internal": "strengonine",
         "name": "Strengonine",
         "type": "Material",
-        "description": "TODO",
+        "description": "An extremely strong and rare mineral found underground.",
         "value": 35
     }
 ]

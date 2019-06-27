@@ -1,0 +1,18 @@
+[
+    {
+        "item": "pickaxe_0",
+        "unlocked": true,
+        "ingredients": {
+            "wood": 15
+        }
+    },
+    {
+        "item": "pickaxe_1",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_0": 1,
+            "wood": 20,
+            "rock": 20
+        }
+    }
+]

@@ -7,10 +7,7 @@
         "max": 5,
         "min": 1
     },
-    "loot": [
-        {
-            "item": "diamond",
-            "chance": 0.3
-        }
-    ]
+    "loot": {
+         "diamond": 0.3
+    }
 }]
