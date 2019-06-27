@@ -17,10 +17,8 @@ client.on('ready', () => {
     console.log(`Connected to Discord!`);
 
     setInterval(() => {
-        task.runDungeon();
         task.runTasks();
     }, 1000*60);
-    task.runDungeon();
     task.runTasks();
     console.log(`Started Task Interval!`);
 })

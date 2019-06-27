@@ -40,27 +40,18 @@ function runTask(data) {
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
             }
         }
-    }
-
-    if (data.task.startsWith("dungeon")) {
+    }else if (data.task.startsWith("dungeon")) {
         var d = data.task.split(":");
         var dInt = d[1];
         var dHp = d[2]
         var newString = `dungeon:${dInt}:${dHp}`
         data.task = dHp - (Math.random() * ((dungeon.fromInternal(dInt).hp.max - dungeon.fromInternal(dInt).hp.min) + 1) + dungeon.fromInternal(dInt).hp.min);
 
-        data.task = newString
-        utils.addItem(data.backpack, JSON.stringify(dungeon.fromInternal(dInt).material), 1);
+        //utils.addItem(data.backpack, JSON.stringify(dungeon.fromInternal(dInt).material), 1);
     }
 
     if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
         data.task = "idle";
     }
     database.updateUserObj(data);
-}
-
-var newHp = 100;
-
-exports.runDungeon = (data, args, hp) => {
-
 }
