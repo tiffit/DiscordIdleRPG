@@ -21,6 +21,7 @@ exports.getTotalCount = function(inventory){
     var keys = Object.keys(inventory);
     var total = 0;
     for(var i = 0; i < keys.length; i++){
+        if(keys[i] === 'equipped')continue;
         total += parseInt(inventory[keys[i]]);
     }
     return total;

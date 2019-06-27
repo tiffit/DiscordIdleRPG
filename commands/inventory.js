@@ -49,7 +49,7 @@ exports.run = async function (discord, bot, args, member, channel) {
             .setTimestamp()
             .setColor([24, 224, 200])
             .setAuthor("Inventory", bot.user.displayAvatarURL)
-            .setDescription(`Equip or use and item with \`${main.properties.prefix}inventory use <item name>\`.`)
+            .setDescription(`Equip or use and item with \`${main.properties.prefix}inventory use <item name>\`.\nStorage: ${util.getTotalCount(data.inventory)}/${util.getInventoryStorage(data)}`)
             .setFooter(member.displayName, member.user.avatarURL)
             .addField("Equipment", equipment);
         var invStr = "";

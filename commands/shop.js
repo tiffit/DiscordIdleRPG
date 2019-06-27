@@ -56,6 +56,21 @@ exports.run = async function (discord, bot, args, member, channel) {
                         channel.send(embed);
                     return;
                 }
+                var storage = util.getTotalCount(data.inventory);
+                var totalStorage = util.getInventoryStorage(data);
+                if(storage + amount > totalStorage){
+                    var embed = new discord.RichEmbed()
+                        .setTimestamp()
+                        .setDescription(`You do not have enough space!`)
+                        .setAuthor("Shop", bot.user.displayAvatarURL)
+                        .setTitle("Purchase Error")
+                        .setFooter(member.displayName, member.user.avatarURL)
+                        .setColor([168, 15, 15])
+                        .addField("Current Space", totalStorage - storage, true)
+                        .addField("Required Space", amount, true);
+                        channel.send(embed);
+                    return;
+                }
                 var embed = new discord.RichEmbed()
                     .setTimestamp()
                     .setDescription(`✅ to confirm and ❌ to cancel. This will expire in 1 minute.`)

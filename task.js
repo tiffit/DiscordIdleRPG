@@ -7,7 +7,6 @@ var dungeon = require('./dungeons');
 
 exports.runTasks = async () => {
     database.getAllUsers(datas => {
-        console.log(datas);
         datas.forEach(async (data) => {
             runTask(data);
         })
@@ -23,7 +22,13 @@ function runTask(data) {
         const equipped = items.fromInternal(inv.equipped.Axe);
         if (equipped) {
             var speed = equipped.speed;
-            utils.addItem(data.backpack, items.fromInternal("wood"), speed);
+            var remaining_space = utils.getBackpackStorage(data) - utils.getTotalCount(data.backpack);
+            var amount = Math.min(speed, remaining_space);
+            utils.addItem(data.backpack, items.fromInternal("wood"), amount);
+            if (amount === remaining_space) {
+                data.task = "idle";
+                return;
+            }
             database.updateUserObj(data);
         }
     } else if (data.task === "mining") {
@@ -38,20 +43,21 @@ function runTask(data) {
                 else if (rand > .01) item_type = "diamond";
                 else item_type = "strengonine";
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
+                    if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
+                        data.task = "idle";
+                        return;
+                    }
             }
         }
     }else if (data.task.startsWith("dungeon")) {
         var d = data.task.split(":");
         var dInt = d[1];
         var dHp = d[2]
-        var newString = `dungeon:${dInt}:${dHp}`
-        data.task = dHp - (Math.random() * ((dungeon.fromInternal(dInt).hp.max - dungeon.fromInternal(dInt).hp.min) + 1) + dungeon.fromInternal(dInt).hp.min);
+        var newString = `dungeon:${dInt}:${dHp}`;
 
         //utils.addItem(data.backpack, JSON.stringify(dungeon.fromInternal(dInt).material), 1);
     }
 
-    if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
-        data.task = "idle";
-    }
+
     database.updateUserObj(data);
 }
