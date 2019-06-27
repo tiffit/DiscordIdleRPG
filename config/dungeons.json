@@ -1,0 +1,11 @@
+[{
+    "internal": "playground",
+    "name": "The Playground",
+    "desc": "Baby steps.",
+    "tier": 1,
+    "hp": {
+        "max": 5,
+        "min": 1
+    },
+    "material": "diamond"
+}]
