@@ -56,8 +56,8 @@ function runTask(data) {
         var dHp = dHp - (Math.random() * ((dungeon.fromInternal(dInt).hp.max - dungeon.fromInternal(dInt).hp.min) + 1) + dungeon.fromInternal(dInt).hp.min);
         var newString = `dungeon:${dInt}:${dHp}`;
 
-        var rand = Math.random();
         for (var i in dungeon.fromInternal(dInt).loot) {
+            var rand = Math.random();
             if (dHp <= 0) {
                 data.task = "idle";
                 database.updateUserObj(data);
