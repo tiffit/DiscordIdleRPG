@@ -1,0 +1,83 @@
+[
+    {
+        "internal": "pole_0",
+        "name": "Beginners Fishing Pole",
+        "tier": 0,
+        "type": "Pole",
+        "description": "A relatively pitiful fishing pole, made from a piece of string and a stick.",
+        "speed": 1,
+        "value": 5
+    },
+    {
+        "internal": "pole_1",
+        "name": "Wooden Fishing Pole",
+        "tier": 1,
+        "type": "Pole",
+        "description": "An upgrade, with a make-shift reel and line.",
+        "speed": 2,
+        "value": 15
+    },
+    {
+        "internal": "pole_2",
+        "name": "Plastic-like Fishing Pole",
+        "tier": 2,
+        "type": "Pole",
+        "description": "A strangely flimsy, mass produced, but sturdier fishing pole. Much easier and faster to cast.",
+        "speed": 4,
+        "value": 30
+    },
+    {
+        "internal": "pole_3",
+        "name": "Iron Fishing Pole",
+        "tier": 3,
+        "type": "Pole",
+        "description": "A fishing pole made of iron, allowing it to be thinner and sturdier. Bigger fish, faster.",
+        "speed": 7,
+        "value": 60
+    },
+    {
+        "internal": "pole_4",
+        "name": "Steel Fishing Pole",
+        "tier": 4,
+        "type": "Pole",
+        "description": "This pole can take the largest of normal beasts.",
+        "speed": 10,
+        "value": 100
+    },
+    {
+        "internal": "pole_5",
+        "name": "Diamond Fishing Pole",
+        "tier": 5,
+        "type": "Pole",
+        "description": "Able to resist breaking under the strongest fish, this pole is envied by all hobbyists.",
+        "speed": 14,
+        "value": 150
+    },
+    {
+        "internal": "pole_6",
+        "name": "Manyllyn Pole",
+        "tier": 6,
+        "type": "Pole",
+        "description": "Can land even the Water Beasts from the Southern Lakes.",
+        "speed": 20,
+        "value": 250
+    },
+    {
+        "internal": "pole_7",
+        "name": "Basic Net",
+        "tier": 7,
+        "type": "Pole",
+        "description": "Utilized in boat missions, this is sure to get you a lot of, even if small, good fish.",
+        "speed": 27,
+        "value": 400
+    },
+    {
+        "internal": "pole_8",
+        "name": "Reinforced Net",
+        "tier": 8,
+        "type": "Pole",
+        "description": "This, paired with a high grade net caster, can catch Water Beasts in large amounts. Reeling in the cash now, aren't we?",
+        "speed": 50,
+        "value": 750
+    }
+]

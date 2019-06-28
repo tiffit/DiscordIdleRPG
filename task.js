@@ -43,19 +43,32 @@ function runTask(data) {
                 else if (rand > .01) item_type = "diamond";
                 else item_type = "strengonine";
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
-                    if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
-                        data.task = "idle";
-                        return;
-                    }
+                if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
+                    data.task = "idle";
+                    return;
+                }
             }
         }
-    }else if (data.task.startsWith("dungeon")) {
+    } else if (data.task.startsWith("dungeon")) {
         var d = data.task.split(":");
         var dInt = d[1];
         var dHp = d[2]
         var newString = `dungeon:${dInt}:${dHp}`;
 
         //utils.addItem(data.backpack, JSON.stringify(dungeon.fromInternal(dInt).material), 1);
+    } else if (data.task === "fishing") {
+        const equipped = items.fromInternal(inv.equipped.pole);
+        if (equipped) {
+            var speed = equipped.speed;
+            for (var i = 0; i < speed; i++) {
+                console.log(items.fromInternal("fish"));
+                utils.addItem(data.backpack, items.fromInternal("fish"), 1);
+                if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
+                    data.task = "idle";
+                    return;
+                }
+            }
+        }
     }
 
 
