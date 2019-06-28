@@ -24,9 +24,10 @@ exports.run = async function (discord, bot, args, member, channel) {
                     channel.send(name + " is not a valid item in your inventory!");
                     return;
                 }
-                if(item.type === "Axe" || item.type === "Pickaxe"){
-                    var old = itemloader.fromInternal(equips[item.type]);
-                    equips[item.type] = item.internal;
+                if(item.type === "Axe" || item.type === "Pickaxe" || item.type === "Fishing Pole"){
+                    var type = item.type.replace(" ", "_");
+                    var old = itemloader.fromInternal(equips[type]);
+                    equips[type] = item.internal;
                     util.removeItem(data.inventory, item, 1);
                     if(old){
                         util.addItem(data.inventory, old, 1);
@@ -64,7 +65,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         var equipment = "";
         equipment += "**Axe:** " + (equips.Axe ? itemloader.fromInternal(equips.Axe).name : "") + "\n";
         equipment += "**Pickaxe:** " + (equips.Pickaxe ? itemloader.fromInternal(equips.Pickaxe).name : "") + "\n";
-        equipment += "**Fishing Rod:** " + (equips.Fishing_Rod ? itemloader.fromInternal(equips.Fishing_Rod).name : "") + "\n";
+        equipment += "**Fishing Pole:** " + (equips.Fishing_Pole ? itemloader.fromInternal(equips.Fishing_Pole).name : "") + "\n";
         equipment += "**Sword:** " + (equips.Sword ? itemloader.fromInternal(equips.Sword).name : "") + "\n";
         equipment += "**Armor:** " + (equips.Armor ? itemloader.fromInternal(equips.Armor).name : "");
         const embed = new discord.RichEmbed()
