@@ -19,11 +19,5 @@
         "pickaxe_6": 100,
         "pickaxe_7": 110,
         "pickaxe_8": 120
-    },
-    "Upgrades": {
-        "upgrade_backpack_0": 100,
-        "upgrade_backpack_1": 3000,
-        "upgrade_backpack_2": 15000,
-        "upgrade_backpack_3": 100000
     }
 }

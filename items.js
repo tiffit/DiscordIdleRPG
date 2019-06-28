@@ -1,7 +1,7 @@
 const list = new Array();
 
 const fileLoc = "./config/items/";
-const fileList = [require(fileLoc + "axe.json"), require(fileLoc + "pickaxe.json"), require(fileLoc + "materials.json"), require(fileLoc + "misc.json")];
+const fileList = [require(fileLoc + "axe.json"), require(fileLoc + "pickaxe.json"), require(fileLoc + "materials.json")];
 
 fileList.forEach((items) => items.forEach((item) => list.push(item)));
 

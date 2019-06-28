@@ -23,7 +23,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                     channel.send(name + " is not a valid item in your inventory!");
                     return;
                 }
-                if(item.type === "Axe" || item.type === "Pickaxe"){
+                if(item.type === "Axe" || "Pickaxe"){
                     var old = itemloader.fromInternal(equips[item.type]);
                     equips[item.type] = item.internal;
                     util.removeItem(data.inventory, item, 1);
@@ -31,16 +31,6 @@ exports.run = async function (discord, bot, args, member, channel) {
                         util.addItem(data.inventory, old, 1);
                     }
                     channel.send("Equipped!");
-                    db.updateUserObj(data);
-                }else if(item.type === "Upgrade"){
-                    if(!data.perks[item.use.type] || data.perks[item.use.type] < item.use.type){
-                        data.perks[item.use.type] = item.use.tier;
-                        util.removeItem(data.inventory, item, 1);
-                        channel.send("Upgrade used!");
-                    }else{
-                        channel.send("You already have an upgrade as good as or better than this!");
-                        return;
-                    }
                     db.updateUserObj(data);
                 }else{
                     channel.send(name + " is not a usable item!");
