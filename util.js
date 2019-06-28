@@ -58,14 +58,17 @@ exports.attemptSetTask = function (discord, bot, member, channel, data, task, it
     db.updateUserObj(data);
 }
 
-exports.syntaxError = function (discord, bot, member, channel, usage) {
+exports.syntaxError = function (discord, bot, member, channel, usage, error) {
     let embed = new discord.RichEmbed()
         .setTimestamp()
         .setAuthor("Syntax Error", bot.user.displayAvatarURL)
         .setFooter(member.displayName, member.user.avatarURL)
         .setDescription("An error was found with the syntax in your command!")
         .setColor([168, 15, 15])
-        .addField("Usage", main.properties.prefix + usage, true);
+        .addField("Usage", main.properties.prefix + usage, false);
+    if(error){
+        embed = embed.addField("Error", error, false);
+    }
     channel.send(embed);
 }
 

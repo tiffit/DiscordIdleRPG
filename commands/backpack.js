@@ -9,27 +9,27 @@ exports.run = async function (discord, bot, args, member, channel) {
             channel.send(util.noAccountMessage());
             return;
         }
-        if(args.length > 0){
-            if(args[0].toLowerCase() === "drop"){
-                var usage = `Usage: ${main.properties.prefix}backpack drop <amount> <item name>`;
-                if(args.length < 3){
-                    channel.send(usage);
+        if (args.length > 0) {
+            if (args[0].toLowerCase() === "drop") {
+                var usage = `backpack drop <amount> <item name>`;
+                if (args.length < 3) {
+                    util.syntaxError(discord, bot, member, channel, usage);
                     return;
                 }
-                if(!/^\d+$/.test(args[1])){
-                    channel.send(usage);
+                if (!/^\d+$/.test(args[1])) {
+                    util.syntaxError(discord, bot, member, channel, usage);
                     return;
                 }
                 var amount = parseInt(args[1]);
                 var name = args.slice(2).join(" ");
                 var item = itemloader.fromName(name);
-                if(!item || !data.backpack[item.internal]){
-                    channel.send(name + " is not a valid item in your backpack!");
+                if (!item || !data.backpack[item.internal]) {
+                    util.syntaxError(discord, bot, member, channel, usage, name + " is not a valid item in your backpack.");
                     return;
                 }
                 var holding = data.backpack[item.internal];
                 var new_holing = holding - amount;
-                if(new_holing < 0){
+                if (new_holing < 0) {
                     let embed = new discord.RichEmbed()
                         .setTimestamp()
                         .setDescription(`You do not have enough ${item.name}!`)
@@ -39,7 +39,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                         .setColor([168, 15, 15])
                         .addField("Current Count", holding, true)
                         .addField("Amount Dropping", amount, true);
-                        channel.send(embed);
+                    channel.send(embed);
                     return;
                 }
                 let embed = new discord.RichEmbed()
@@ -50,35 +50,35 @@ exports.run = async function (discord, bot, args, member, channel) {
                     .setFooter(member.displayName, member.user.avatarURL)
                     .addField("Item", item.name, true)
                     .addField("Count", amount, true);
-                    channel.send(embed).then(async (msg) => {
-                        await msg.react('✅');
-                        await msg.react('❌');
-                        const filter = (reaction, user) => reaction.emoji.name === '✅' || '❌' && user.id === member.user.id;
-                        const collector = msg.createReactionCollector(filter, { time: 60000 });
-                        collector.on('collect', (r) => {
-                            msg.clearReactions();
-                            if(r.emoji.name === '✅'){
-                                embed = embed.setTimestamp()
-                                    .setDescription(`Confirmed! ✅`)
-                                    .setColor([15, 168, 15]);
-                                msg.edit(embed);
-                                util.removeItem(data.backpack, item, amount);
-                                db.updateUserObj(data);
-                            }
-                            if(r.emoji.name === '❌'){
-                                embed = embed.setTimestamp()
-                                    .setDescription(`Canceled! ❌`)
-                                    .setColor([168, 15, 15]);
-                                msg.edit(embed);
-                            }
-                            collector.stop();
-                        });
+                channel.send(embed).then(async (msg) => {
+                    await msg.react('✅');
+                    await msg.react('❌');
+                    const filter = (reaction, user) => reaction.emoji.name === '✅' || '❌' && user.id === member.user.id;
+                    const collector = msg.createReactionCollector(filter, { time: 60000 });
+                    collector.on('collect', (r) => {
+                        msg.clearReactions();
+                        if (r.emoji.name === '✅') {
+                            embed = embed.setTimestamp()
+                                .setDescription(`Confirmed! ✅`)
+                                .setColor([15, 168, 15]);
+                            msg.edit(embed);
+                            util.removeItem(data.backpack, item, amount);
+                            db.updateUserObj(data);
+                        }
+                        if (r.emoji.name === '❌') {
+                            embed = embed.setTimestamp()
+                                .setDescription(`Canceled! ❌`)
+                                .setColor([168, 15, 15]);
+                            msg.edit(embed);
+                        }
+                        collector.stop();
+                    });
                 });
                 return;
             }
         }
         var description = `\`${main.properties.prefix}backpack drop <amount> <item name>\` to drop items from your backpack.\n`;
-        description += "React with 👍 to move all items from the backpack to the inventory.\n";
+        description += "React with 👍 to transfer all items from the backpack to the inventory.\n";
         description += "Storage: " + util.getTotalCount(data.backpack) + "/" + util.getBackpackStorage(data);
         const embed = new discord.RichEmbed()
             .setTimestamp()
@@ -102,8 +102,17 @@ exports.run = async function (discord, bot, args, member, channel) {
             msg.awaitReactions(filter, { max: 1, time: 60 * 1000, errors: ['time'] })
                 .then(collected => {
                     msg.clearReactions();
-                    if (util.getTotalCount(data.backpack) > util.getBackpackStorage(data)) {
-                        return channel.send('Your inventory is too full! Try selling some of it, or buying an upgrade in $shop.');
+                    if (util.getInventoryStorage(data) - util.getTotalCount(data.inventory) - util.getTotalCount(data.backpack) < 0) {
+                        let embed = new discord.RichEmbed()
+                            .setTimestamp()
+                            .setDescription(`Your inventory is too full! Try selling some of it, buying an upgrade in ${main.properties.prefix}shop, or dropping items in your backpack.`)
+                            .setAuthor("Backpack", bot.user.displayAvatarURL)
+                            .setTitle("Transfer Error")
+                            .setFooter(member.displayName, member.user.avatarURL)
+                            .setColor([168, 15, 15])
+                            .addField("Backpack", util.getTotalCount(data.backpack), true)
+                            .addField("Amount Dropping", amount, true);
+                        channel.send(embed);
                     } else {
                         var keys = Object.keys(data.backpack);
                         for (var i = 0; i < keys.length; i++) {

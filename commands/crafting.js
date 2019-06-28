@@ -12,20 +12,20 @@ exports.run = async function (discord, bot, args, member, channel) {
         }
         if (args.length > 0) {
             if (args[0].toLowerCase() === "craft") {
-                var usage = `Usage: ${main.properties.prefix}crafting craft <amount> <item name>`;
+                var usage = `crafting craft <amount> <item name>`;
                 if (args.length < 3) {
-                    channel.send(usage);
+                    util.syntaxError(discord, bot, member, channel, usage);
                     return;
                 }
                 if (!/^\d+$/.test(args[1])) {
-                    channel.send(usage);
+                    util.syntaxError(discord, bot, member, channel, usage);
                     return;
                 }
                 var amount = parseInt(args[1]);
                 var name = args.slice(2).join(" ");
                 var item = itemloader.fromName(name);
                 if (!item || !crafting.fromInternal(item.internal)) {
-                    channel.send(name + " is not a valid craftable item!");
+                    util.syntaxError(discord, bot, member, channel, usage, name + " is not a valid item in your backpack.");
                     return;
                 }
                 var recipe = crafting.fromInternal(item.internal);
