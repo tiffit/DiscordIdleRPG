@@ -19,5 +19,8 @@
         "pickaxe_6": 100,
         "pickaxe_7": 110,
         "pickaxe_8": 120
+    },
+    "Blueprints": {
+        "bp_pickaxe_1": 30
     }
 }

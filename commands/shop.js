@@ -208,7 +208,7 @@ function createEmbed(discord, bot, member, page, data){
     if(startIndex < 0)return createEmbed(discord, bot, member, 0);
     var categories = Object.keys(shopobj);
     var cat_count = categories.length;
-    var max_page = Math.floor(cat_count/cat_per_page) - 1;
+    var max_page = Math.ceil(cat_count/cat_per_page) - 1;
     if(startIndex >= cat_count)return createEmbed(discord, bot, member, max_page);
     var embed = new discord.RichEmbed()
         .setTimestamp()

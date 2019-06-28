@@ -29,6 +29,17 @@ exports.run = async function (discord, bot, args, member, channel) {
                     return;
                 }
                 var recipe = crafting.fromInternal(item.internal);
+                if (!crafting.unlocked(recipe, data)) {
+                    let embed = new discord.RichEmbed()
+                        .setTimestamp()
+                        .setDescription(`You do not have this recipe unlocked!`)
+                        .setAuthor("Crafting", bot.user.displayAvatarURL)
+                        .setTitle("Crafting Error")
+                        .setFooter(member.displayName, member.user.avatarURL)
+                        .setColor([168, 15, 15]);
+                    channel.send(embed);
+                    return;
+                }
                 var ingKeys = Object.keys(recipe.ingredients);
                 for (var k = 0; k < ingKeys.length; k++) {
                     var ingamount = recipe.ingredients[ingKeys[k]] * amount;

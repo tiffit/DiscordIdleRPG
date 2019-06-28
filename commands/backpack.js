@@ -14,6 +14,7 @@ exports.run = async function (discord, bot, args, member, channel) {
             .setColor([24, 224, 200])
             .setAuthor("Backpack", bot.user.displayAvatarURL)
             .setDescription("Storage: " + util.getTotalCount(data.backpack) + "/" + util.getBackpackStorage(data) + "\nReact with 👍 to move all items from the backpack to the inventory.")
+            
             .setFooter(`${member.displayName}`, member.user.avatarURL);
         var invStr = "";
         for (let [internal, count] of Object.entries(data.backpack)) {

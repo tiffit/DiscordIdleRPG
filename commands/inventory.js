@@ -1,5 +1,6 @@
 const db = require("./../database");
 const itemloader = require('./../items');
+const craftingloader = require('./../crafting');
 const main = require("./../main");
 const util = require('../util');
 
@@ -39,6 +40,17 @@ exports.run = async function (discord, bot, args, member, channel) {
                         channel.send("Upgrade used!");
                     }else{
                         channel.send("You already have an upgrade as good as or better than this!");
+                        return;
+                    }
+                    db.updateUserObj(data);
+                }else if(item.type === "Blueprint"){
+                    if(!craftingloader.unlocked(craftingloader.fromInternal(item.unlock), data)){
+                        if(!data.perks.blueprints)data.perks.blueprints = [];
+                        data.perks.blueprints.push(item.unlock);
+                        util.removeItem(data.inventory, item, 1);
+                        channel.send("Recipe unlocked!");
+                    }else{
+                        channel.send("You already have this recipe unlocked!");
                         return;
                     }
                     db.updateUserObj(data);

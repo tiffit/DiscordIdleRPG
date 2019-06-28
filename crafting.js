@@ -10,5 +10,5 @@ exports.fromInternal = function(internal){
 }
 
 exports.unlocked = function(recipe, data){
-    return recipe.unlocked;
+    return recipe.unlocked || (!data.perks.blueprints ? false : data.perks.blueprints.includes(recipe.item));
 }

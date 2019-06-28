@@ -8,7 +8,7 @@
     },
     {
         "item": "pickaxe_1",
-        "unlocked": true,
+        "unlocked": false,
         "ingredients": {
             "pickaxe_0": 1,
             "wood": 20,
