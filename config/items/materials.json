@@ -7,6 +7,13 @@
         "value": 1
     },
     {
+        "internal": "fish",
+        "name": "Fish",
+        "type": "Material",
+        "description": "Obtained from fishing.",
+        "value": 5
+    },
+    {
         "internal": "rock",
         "name": "Rock",
         "type": "Material",

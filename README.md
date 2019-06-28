@@ -12,15 +12,15 @@ Commands
     - sell: arg 1 is item by name. check user inventory. confirmation message afterwards. y/n  (COMPLETE)
     - pricecheck: arg 1 is item  (COMPLETE)
   * Inventory
-    - view: lists all items in inventory in embed. next to view next page. close to cancel
+    - view: lists all items in inventory in embed. next to view next page. close to cancel (COMPLETE)
     - drop: arg 1 is item by name, drops it from inventory. arg 2 is amount of items to drop.
   * Tasks
-    - dungeon
+    - dungeon 
     - dungeoninfo
     - dungeonlist
-    - fish
-    - mine
-    - woodcutting
+    - fish (COMPLETE)
+    - mine (COMPLETE)
+    - woodcutting (COMPLETE)
   * Player info
-    - info: Lists all player info
+    - info: Lists all player info (COMPLETE, sorta?)
     
