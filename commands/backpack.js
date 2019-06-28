@@ -13,8 +13,8 @@ exports.run = async function (discord, bot, args, member, channel) {
             .setTimestamp()
             .setColor([24, 224, 200])
             .setAuthor("Backpack", bot.user.displayAvatarURL)
-            .setDescription("Storage: " + util.getTotalCount(data.backpack) + "/" + util.getBackpackStorage(data))
-            .setFooter(`👍 to move all items from backpack to inventory - ${member.displayName}`, member.user.avatarURL);
+            .setDescription("Storage: " + util.getTotalCount(data.backpack) + "/" + util.getBackpackStorage(data) + "\nReact with 👍 to move all items from the backpack to the inventory.")
+            .setFooter(`${member.displayName}`, member.user.avatarURL);
         var invStr = "";
         for (let [internal, count] of Object.entries(data.backpack)) {
             var item = itemloader.fromInternal(internal);
@@ -28,30 +28,20 @@ exports.run = async function (discord, bot, args, member, channel) {
 
         channel.send(embed).then(msg => {
             msg.react('👍');
-
-
-
             msg.awaitReactions(filter, { max: 1, time: 60 * 1000, errors: ['time'] })
                 .then(collected => {
+                    msg.clearReactions();
                     if (util.getTotalCount(data.backpack) > util.getBackpackStorage(data)) {
                         return channel.send('Your inventory is too full! Try selling some of it, or buying an upgrade in $shop.');
                     } else {
-                        for (var item in data.backpack) {
-                            var len = data.backpack[item]
-                            util.addItemFromB(data.inventory, item, len);
-                            data.backpack = {};
-                            db.updateUserObj(data);
-                            invStr = "";
+                        var keys = Object.keys(data.backpack);
+                        for (var i = 0; i < keys.length; i++) {
+                            var item = itemloader.fromInternal(keys[i]);
                         }
-                        const newEmbed = new discord.RichEmbed()
-                            .setTimestamp()
-                            .setColor([24, 224, 200])
-                            .setAuthor("Backpack", bot.user.displayAvatarURL)
-                            .setDescription("Storage: " + util.getTotalCount(data.backpack) + "/" + util.getBackpackStorage(data))
-                            .setFooter(`👍 to move all items from backpack to inventory - ${member.displayName}`, member.user.avatarURL);
-                        if (invStr === "") invStr = "Backpack is empty!";
-                        newEmbed.addField("Contents", invStr);
-                        msg.edit(newEmbed);
+                        data.backpack = {};
+                        db.updateUserObj(data);
+                        embed.setDescription("All contents moved to inventory!");
+                        msg.edit(embed);
                     }
                 })
         });

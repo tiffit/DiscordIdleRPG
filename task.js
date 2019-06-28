@@ -68,8 +68,6 @@ function runTask(data) {
             data.task = newString;
             if (typeof item_type === 'string' && item_type !== "") {
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
-                console.log(`passed`);
-                
                 database.updateUserObj(data);
             }
         }
