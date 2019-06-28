@@ -33,7 +33,7 @@ exports.attemptSetTask = function (discord, bot, member, channel, data, task, it
     taskDisplay = taskDisplay.charAt(0).toUpperCase() + taskDisplay.substring(1);
     var oldTask = data.task.split(":")[0].toLowerCase();
     oldTask = oldTask.charAt(0).toUpperCase() + oldTask.substring(1);
-    if (!data.inventory.equipped[itemtype]) {
+    if (itemtype != null && !data.inventory.equipped[itemtype]) {
         let embed = new discord.RichEmbed()
             .setTimestamp()
             .setDescription(`You do not have the required tool equipped!`)

@@ -13,7 +13,8 @@ const cmdmap = new Map(
         ["mining", require('./mining')],
         ["dungeon", require('./dungeon')],
         ["crafting", require('./crafting')],
-        ["fishing", require('./fishing')]
+        ["fishing", require('./fishing')],
+        ["idle", require('./idle')]
     ]
 );
 
