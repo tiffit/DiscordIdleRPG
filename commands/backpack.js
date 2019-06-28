@@ -9,13 +9,12 @@ exports.run = async function (discord, bot, args, member, channel) {
             return;
         }
 
-
         const embed = new discord.RichEmbed()
             .setTimestamp()
             .setColor([24, 224, 200])
             .setAuthor("Backpack", bot.user.displayAvatarURL)
             .setDescription("Storage: " + util.getTotalCount(data.backpack) + "/" + util.getBackpackStorage(data))
-            .setFooter(member.displayName, member.user.avatarURL);
+            .setFooter(`👍 to move all items from backpack to inventory - ${member.displayName}`, member.user.avatarURL);
         var invStr = "";
         for (let [internal, count] of Object.entries(data.backpack)) {
             var item = itemloader.fromInternal(internal);
@@ -40,9 +39,19 @@ exports.run = async function (discord, bot, args, member, channel) {
                         for (var item in data.backpack) {
                             var len = data.backpack[item]
                             util.addItemFromB(data.inventory, item, len);
+                            data.backpack = {};
                             db.updateUserObj(data);
+                            invStr = "";
                         }
-                        console.log(data.inventory)
+                        const newEmbed = new discord.RichEmbed()
+                            .setTimestamp()
+                            .setColor([24, 224, 200])
+                            .setAuthor("Backpack", bot.user.displayAvatarURL)
+                            .setDescription("Storage: " + util.getTotalCount(data.backpack) + "/" + util.getBackpackStorage(data))
+                            .setFooter(`👍 to move all items from backpack to inventory - ${member.displayName}`, member.user.avatarURL);
+                        if (invStr === "") invStr = "Backpack is empty!";
+                        newEmbed.addField("Contents", invStr);
+                        msg.edit(newEmbed);
                     }
                 })
         });

@@ -10,6 +10,7 @@ exports.run = async function (discord, bot, args, member, channel) {
             channel.send(util.noAccountMessage());
             return;
         }
+        channel.send('Started dungeon.');
         var dungeon = dungeons.fromInternal(args[0].toLowerCase());
         var task = `dungeon:${dungeon.internal}:${hp}`;
         data.task = task;
