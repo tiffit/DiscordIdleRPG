@@ -1,7 +1,9 @@
 [
     {
         "internal": "bp_pickaxe_1",
+        "name": "Stone Pickaxe BP",
         "type": "Blueprint",
+        "description": "Unlocks the 'Stone Pickaxe' crafting recipe.",
         "value": 0,
         "unlock": "pickaxe_1"
     }
