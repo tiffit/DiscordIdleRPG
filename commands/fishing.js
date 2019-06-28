@@ -7,16 +7,6 @@ exports.run = async function (discord, bot, args, member, channel) {
             channel.send(util.noAccountMessage());
             return;
         }
-        var fishingEmbed = new discord.RichEmbed()
-            .setTimestamp()
-            .setColor([244, 194, 66])
-            .setDescription(`Began fishing!`)
-            .setAuthor("Task Change", bot.user.displayAvatarURL)
-            .setFooter(member.displayName, member.user.avatarURL);
-
-        data.task = "fishing";
-        db.updateUserObj(data);
-
-        channel.send(fishingEmbed);
+        util.attemptSetTask(discord, bot, member, channel, data, "fishing", "Fishing_Pole");
     })
 }

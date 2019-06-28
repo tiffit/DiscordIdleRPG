@@ -8,3 +8,12 @@ exports.fromInternal = function(internal){
     }
     return null;
 }
+
+exports.fromName = function(name){
+    for(var i = 0; i < dungeonsInfo.length; i++){
+        if (typeof dungeonsInfo[i].name != "undefined") {
+            if(dungeonsInfo[i].name.toLowerCase() === name.toLowerCase())return dungeonsInfo[i];
+        }
+    }
+    return null;
+}
