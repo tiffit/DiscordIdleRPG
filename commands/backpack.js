@@ -37,6 +37,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                         var keys = Object.keys(data.backpack);
                         for (var i = 0; i < keys.length; i++) {
                             var item = itemloader.fromInternal(keys[i]);
+                            util.addItem(data.inventory, item, data.backpack[item.internal]);
                         }
                         data.backpack = {};
                         db.updateUserObj(data);
