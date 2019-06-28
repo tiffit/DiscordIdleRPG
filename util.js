@@ -32,9 +32,23 @@ exports.noAccountMessage = function(){
 }
 
 exports.getInventoryStorage = function(data){
+    if(data.perks.upgrade_inventory !== 'undefined'){
+        var val = data.perks.upgrade_inventory;
+        if(val === 0)return 750;
+        if(val === 1)return 2000;
+        if(val === 2)return 5000;
+        if(val === 3)return 20000;
+    }
     return 350;
 }
 
 exports.getBackpackStorage = function(data){
+    if(data.perks.upgrade_backpack !== 'undefined'){
+        var val = data.perks.upgrade_backpack;
+        if(val === 0)return 150;
+        if(val === 1)return 400;
+        if(val === 2)return 1000;
+        if(val === 3)return 2500;
+    }
     return 100;
 }
