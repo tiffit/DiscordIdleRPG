@@ -27,6 +27,7 @@ function runTask(data) {
             utils.addItem(data.backpack, items.fromInternal("wood"), amount);
             if (amount === remaining_space) {
                 data.task = "idle";
+                database.updateUserObj(data);
                 return;
             }
             database.updateUserObj(data);
@@ -45,9 +46,11 @@ function runTask(data) {
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
                 if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
                     data.task = "idle";
+                    database.updateUserObj(data);
                     return;
                 }
             }
+            database.updateUserObj(data);
         }
     } else if (data.task.startsWith("dungeon")) {
         var d = data.task.split(":");
@@ -81,9 +84,11 @@ function runTask(data) {
                 utils.addItem(data.backpack, items.fromInternal("fish"), 1);
                 if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
                     data.task = "idle";
+                    database.updateUserObj(data);
                     return;
                 }
             }
+            database.updateUserObj(data);
         }
     }
 
