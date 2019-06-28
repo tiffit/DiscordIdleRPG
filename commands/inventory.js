@@ -24,7 +24,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                     channel.send(name + " is not a valid item in your inventory!");
                     return;
                 }
-                if(item.type === "Axe" || item.type === "Pickaxe" || item.type === "Fishing Pole"){
+                if(item.type === "Axe" || item.type === "Pickaxe" || item.type === "Fishing Pole" || item.type === "Armor" || item.type === "Sword"){
                     var type = item.type.replace(" ", "_");
                     var old = itemloader.fromInternal(equips[type]);
                     equips[type] = item.internal;

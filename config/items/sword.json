@@ -1,0 +1,10 @@
+[
+    {
+        "internal": "sword_0",
+        "name": "Test Sword",
+        "type": "Sword",
+        "description": "TODO",
+        "value": 3,
+        "mult": 1.05
+    }
+]

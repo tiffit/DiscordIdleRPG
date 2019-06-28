@@ -64,7 +64,8 @@ function runTask(data) {
                 return;
             }
             var item_type = "";
-            if (rand > dungeon.fromInternal(dInt).loot[i]) item_type = i;
+            
+            if (rand > dungeon.fromInternal(dInt).loot[i]*items.fromInternal(data.inventory.equipped.Sword).mult) item_type = i;
             data.task = newString;
             if (typeof item_type === 'string' && item_type !== "") {
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
@@ -77,7 +78,6 @@ function runTask(data) {
         if (equipped) {
             var speed = equipped.speed;
             for (var i = 0; i < speed; i++) {
-                console.log(items.fromInternal("fish"));
                 utils.addItem(data.backpack, items.fromInternal("fish"), 1);
                 if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
                     data.task = "idle";
