@@ -9,7 +9,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         },
         {
             title: `Starting Off`,
-            text: `To start off with, you begin with a simple wood-felling axe equipped. \n To view your equipped item, type in \`${main.properties.prefix}inventory\`. \n This will show you your currently equipped items, and all other items inside of your inventory. \n`
+            text: `To start off with, you begin with a simple wood-felling axe equipped. \n To view your equipped item, type in \`${main.properties.prefix}inventory\`. \n This will show you your currently equipped items, and all other items inside of your inventory.\nIf you ever come across an item you want to learn more about, use \`${main.properties.prefix}iteminfo <item name>\``
         },
         {
             title: `Shopping`,
@@ -29,7 +29,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         },
         {
             title: `Dungeons`,
-            text: `Dungeons are scary things gang. Just kidding. They're not. They're just really unreliable in their loot. However, whenever you do recieve loot, it's in large quantities with high value. \n To list all dungeons, type in \`${main.properties.prefix}dungeoninfo\`. To start a dungeon, type \`${main.properties.prefix}dungeon (dungeon name)\`. \n After time, you will die. This doesn't lose you anything, you just get set to idle. To prevent dying, you can \`${main.properties.prefix}fish\`! Fish heal you for a certain amount of HP every minute, keeping you alive and dungeoning longer.`
+            text: `Dungeons are scary things gang. Just kidding. They're not. They're just really unreliable in their loot. However, whenever you do recieve loot, it's in large quantities with high value. \n To list all dungeons, type in \`${main.properties.prefix}dungeoninfo\`. To start a dungeon, type \`${main.properties.prefix}dungeon <dungeon name>\`. \n After time, you will die. This doesn't lose you anything, you just get set to idle. To prevent dying, you can \`${main.properties.prefix}fish\`! Fish heal you for a certain amount of HP every minute, keeping you alive and dungeoning longer.`
         }
     ]
     var startEmbed = new discord.RichEmbed()

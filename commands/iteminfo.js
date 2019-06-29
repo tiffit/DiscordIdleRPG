@@ -1,12 +1,14 @@
 const items = require('./../items');
+const util = require('./../util');
 
 exports.run = async function (discord, bot, args, member, channel) {
     if (args.length == 0) {
-        channel.send("Usage: iteminfo <item name>");
+        util.syntaxError(discord, bot, member, channel, "iteminfo <item name>");
+        return;
     }
     const item_name = args.join(" ");
     const item = items.fromName(item_name);
-    if(item){
+    if (item) {
         const embed = new discord.RichEmbed()
             .setTimestamp()
             .setColor([24, 224, 200])
@@ -22,7 +24,14 @@ exports.run = async function (discord, bot, args, member, channel) {
         if (typeof item.mult !== 'undefined') embed.addField("Loot Multiplier", item.mult, true);
         embed.addField("Sell Value", item.value + " Gold", true);
         channel.send(embed);
-    }else{
-        channel.send(`Unknown item "${item_name}"!`);
+    } else {
+        let embed = new discord.RichEmbed()
+            .setTimestamp()
+            .setDescription(`Unknown item "${item_name}"!`)
+            .setAuthor("Item Info", bot.user.displayAvatarURL)
+            .setTitle("Info Error")
+            .setFooter(member.displayName, member.user.avatarURL)
+            .setColor([168, 15, 15]);
+        channel.send(embed);
     }
 }

@@ -2,7 +2,6 @@ const main = require("./../main");
 
 const cmdmap = new Map(
     [
-        ["ping", require('./ping')],
         ["iteminfo", require('./iteminfo')],
         ["shop", require('./shop')],
         ["start", require('./start')],
