@@ -1,5 +1,6 @@
 # DiscordIdleRPG
 Discord Bot for Discord's 2019 Hackweek
+Test Server/Bug Reports/Questions:https://discord.gg/uBXwveQ
 
 ## How to set up
 
@@ -24,4 +25,3 @@ Discord Bot for Discord's 2019 Hackweek
   - Type in `npm i`
   - Type in `node main`
 * Join the Discord to test it if you have any problems, or any questions!
-  - https://discord.gg/uBXwveQ
