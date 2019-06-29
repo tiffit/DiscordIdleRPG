@@ -4,6 +4,8 @@ const crafting = require("./../crafting");
 const util = require("./../util");
 const main = require("./../main");
 
+const cat_per_page = 6;
+
 exports.run = async function (discord, bot, args, member, channel) {
     await db.getUserObj(member.id, member.guild.id, (data) => {
         if (data == null) {
@@ -94,24 +96,49 @@ exports.run = async function (discord, bot, args, member, channel) {
                 return;
             }
         }
-        const embed = new discord.RichEmbed()
-            .setTimestamp()
-            .setColor([24, 224, 200])
-            .setAuthor("Crafting", bot.user.displayAvatarURL)
-            .setTitle("Recipe List")
-            .setDescription(``)
-            .setFooter(member.displayName, member.user.avatarURL);
-        for (var i = 0; i < crafting.recipes.length; i++) {
-            var value = "";
-            var recipe = crafting.recipes[i];
-            var ingKeys = Object.keys(recipe.ingredients);
-            for (var k = 0; k < ingKeys.length; k++) {
-                var ing = itemloader.fromInternal(ingKeys[k]);
-                console.log(ingKeys[k]);
-                value += `${ing.name} x${recipe.ingredients[ingKeys[k]]}\n`;
-            }
-            embed.addField(itemloader.fromInternal(recipe.item).name + (crafting.unlocked(recipe, data) ? "" : "🔒"), value, true);
-        }
-        channel.send(embed);
+        
+        channel.send(createEmbed(discord, bot, member, 0, data)).then(async (msg) => {
+            await msg.react('⬅');
+            await msg.react('➡');
+            const filter = (reaction, user) => reaction.emoji.name === '⬅' || '➡' && user.id === member.user.id;
+            const collector = msg.createReactionCollector(filter, { time: 15000 });
+            collector.on('collect', (r) => {
+                r.users.array().forEach(function (user) {
+                    if (!user.bot) r.remove(user);
+                });
+                var footer = msg.embeds[0].footer;
+                var page = parseInt(footer.text.substring(5).split("/")[0]) - 1;
+                if (r.emoji.name === '⬅') page--;
+                if (r.emoji.name === '➡') page++;
+                msg.edit(createEmbed(discord, bot, member, page, data));
+            });
+        });;
     });
+}
+
+function createEmbed(discord, bot, member, page, data) {
+    const startIndex = page * cat_per_page;
+    if (startIndex < 0) return createEmbed(discord, bot, member, 0);
+    var cat_count = crafting.recipes.length;
+    var max_page = Math.ceil(cat_count / cat_per_page) - 1;
+    if (startIndex >= cat_count) return createEmbed(discord, bot, member, max_page);
+
+    const embed = new discord.RichEmbed()
+        .setTimestamp()
+        .setColor([24, 224, 200])
+        .setAuthor("Crafting", bot.user.displayAvatarURL)
+        .setTitle("Recipe List")
+        .setDescription(`Use ⬅ and ➡ to go between pages. \`${main.properties.prefix}crafting craft <amount> <item name>\` to craft items.`)
+        .setFooter(`Page ${page + 1}/${max_page + 1}`, member.user.avatarURL);
+    for (var i = startIndex; i < Math.min(cat_count, startIndex + cat_per_page); i++) {
+        var value = "";
+        var recipe = crafting.recipes[i];
+        var ingKeys = Object.keys(recipe.ingredients);
+        for (var k = 0; k < ingKeys.length; k++) {
+            var ing = itemloader.fromInternal(ingKeys[k]);
+            value += `${ing.name} x${recipe.ingredients[ingKeys[k]]}\n`;
+        }
+        embed.addField(itemloader.fromInternal(recipe.item).name + (crafting.unlocked(recipe, data) ? "" : "🔒"), value, true);
+    }
+    return embed;
 }

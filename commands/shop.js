@@ -198,7 +198,6 @@ exports.run = async function (discord, bot, args, member, channel) {
                 if(r.emoji.name === '➡')page++;
                 msg.edit(createEmbed(discord, bot, member, page, data));
             });
-
         });
     });
 }
