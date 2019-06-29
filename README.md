@@ -21,6 +21,6 @@ Test Server/Bug Reports/Questions:https://discord.gg/uBXwveQ
 * Set up secret.json in `/config/secret.json` in the project root.
   - Observe `secret_template.json`, and copy your token and db info in to it.
   - Rename the file `secret.json`
-* Open terminal and navigate to the root directory of the project.
+* Open terminal and navigate to the root directory of the project. (Make sure you have node.js installed!)
   - Type in `npm i`
   - Type in `node main`
