@@ -5,7 +5,6 @@ var task = require('../task');
 const util = require('../util');
 
 exports.run = async function (discord, bot, args, member, channel) {
-    var hp = 100;
     await db.getUserObj(member.id, member.guild.id, (data) => {
         if (data == null) {
             channel.send(util.noAccountMessage());
@@ -15,9 +14,7 @@ exports.run = async function (discord, bot, args, member, channel) {
             util.syntaxError(discord, bot, member, channel, "dungeon <dungeon name>");
             return;
         }
-        if (data.inventory.equipped.Armor) {
-            hp += items.fromInternal(data.inventory.equipped.Armor).hp;
-        }
+        var hp = util.getMaxHp(data);
         var name = args.join(" ");
         var dungeon = dungeons.fromName(name);
         if (!dungeon) {

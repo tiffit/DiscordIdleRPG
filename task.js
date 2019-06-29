@@ -57,24 +57,41 @@ function runTask(data) {
         var dInt = d[1];
         var dHp = d[2]
         var dHp = dHp - (Math.random() * ((dungeon.fromInternal(dInt).hp.max - dungeon.fromInternal(dInt).hp.min) + 1) + dungeon.fromInternal(dInt).hp.min);
+        var maxHp = utils.getMaxHp(data);
+        var invKeys = Object.keys(data.inventory);
+        for(var i = 0; i < invKeys.length; i++){
+            var key = invKeys[i];
+            if(key === 'equipped')continue;
+            var item = items.fromInternal(key);
+            if(item.type === "Heal"){
+                var item_count = data.inventory[key];
+                for(var k = 0; k < item_count; k++){
+                    if(item.heal + dHp <= maxHp){
+                        dHp += item.heal;
+                        utils.removeItem(data.inventory, item, 1);
+                    }else{
+                        break;
+                    }
+                }
+            }
+        }
         var newString = `dungeon:${dInt}:${dHp}`;
-
+        if (dHp <= 0) {
+            data.task = "idle";
+            database.updateUserObj(data);
+            return;
+        }
         for (var i in dungeon.fromInternal(dInt).loot) {
             var rand = Math.random();
-            if (dHp <= 0) {
-                data.task = "idle";
-                database.updateUserObj(data);
-                return;
-            }
             var item_type = "";
             
             if (rand > dungeon.fromInternal(dInt).loot[i]*items.fromInternal(data.inventory.equipped.Sword).mult) item_type = i;
             data.task = newString;
             if (typeof item_type === 'string' && item_type !== "") {
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
-                database.updateUserObj(data);
             }
         }
+        database.updateUserObj(data);
 
     } else if (data.task === "fishing") {
         const equipped = items.fromInternal(inv.equipped.pole);

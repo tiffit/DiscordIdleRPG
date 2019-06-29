@@ -28,6 +28,14 @@ exports.getTotalCount = function (inventory) {
     return total;
 }
 
+exports.getMaxHp = function (data){
+    var hp = 100;
+    if (data.inventory.equipped.Armor) {
+        hp += items.fromInternal(data.inventory.equipped.Armor).hp;
+    }
+    return hp;
+}
+
 exports.attemptSetTask = function (discord, bot, member, channel, data, task, itemtype) {
     var taskDisplay = task.split(":")[0].toLowerCase();
     taskDisplay = taskDisplay.charAt(0).toUpperCase() + taskDisplay.substring(1);

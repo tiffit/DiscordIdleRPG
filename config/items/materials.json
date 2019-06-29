@@ -9,9 +9,10 @@
     {
         "internal": "fish",
         "name": "Fish",
-        "type": "Material",
+        "type": "Heal",
         "description": "Obtained from fishing.",
-        "value": 5
+        "value": 1.3,
+        "heal": 0.25
     },
     {
         "internal": "rock",
