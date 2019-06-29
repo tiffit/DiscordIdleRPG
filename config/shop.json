@@ -1,4 +1,11 @@
 {
+    "Materials": {
+        "rope": 100,
+        "bluemetal": 600,
+        "corruptedarmor": 3000,
+        "steel": 200,
+        "manyllyn": 750
+    },
     "Blueprints": {
         "bp_steel": 200,
         "bp_manyllyn": 5000,

@@ -36,35 +36,29 @@
             "fish": 1000
         }
     },
-    
-
-    {
-        "item": "axe_0",
-        "unlocked": true,
-        "ingredients": {
-            "wood": 20,
-            "rock": 20
-        }
-    },
     {
         "item": "axe_1",
         "unlocked": true,
         "ingredients": {
-            "wood": 15
+            "pickaxe_0": 1,
+            "wood": 20,
+            "rock": 20
         }
     },
     {
         "item": "axe_2",
         "unlocked": true,
         "ingredients": {
+            "pickaxe_1": 1,
             "wood": 30,
-            "rock": 15
+            "rock": 20
         }
     },
     {
         "item": "axe_3",
         "unlocked": true,
         "ingredients": {
+            "pickaxe_2": 1,
             "iron": 15,
             "rock": 20,
             "wood": 50
@@ -74,15 +68,17 @@
         "item": "axe_4",
         "unlocked": true,
         "ingredients": {
+            "pickaxe_3": 1,
             "steel": 15,
-            "wood": 50
+            "wood": 100
         }
     },
     {
         "item": "axe_5",
         "unlocked": true,
         "ingredients": {
-            "diamond": 15,
+            "pickaxe_4": 1,
+            "diamond": 40,
             "rarecore": 1
         }
     },
@@ -90,16 +86,18 @@
         "item": "axe_6",
         "unlocked": true,
         "ingredients": {
-            "rarecore": 4,
-            "manyllyn": 10
+            "pickaxe_5": 1,
+            "rarecore": 5,
+            "manyllyn": 30
         }
     },
     {
         "item": "axe_7",
         "unlocked": true,
         "ingredients": {
+            "pickaxe_6": 1,
             "rarecore": 10,
-            "manyllyn": 10,
+            "manyllyn": 30,
             "steel": 500
         }
     },
@@ -107,12 +105,12 @@
         "item": "axe_8",
         "unlocked": true,
         "ingredients": {
+            "pickaxe_7": 1,
             "rarecore": 20,
             "manyllyn": 100,
-            "steel": 50
+            "steel": 500
         }
     },
-
     {
         "item": "pickaxe_0",
         "unlocked": true,
@@ -165,7 +163,7 @@
         "ingredients": {
             "pickaxe_4": 1,
             "diamond": 50,
-            "rarecore": 1
+            "rarecore": 4
         }
     },
     {
@@ -173,7 +171,7 @@
         "unlocked": true,
         "ingredients": {
             "pickaxe_5": 1,
-            "manyllyn": 20,
+            "manyllyn": 40,
             "rarecore": 4
         }
     },
@@ -183,7 +181,7 @@
         "ingredients": {
             "pickaxe_6": 1,
             "steel": 500,
-            "manyllyn": 10,
+            "manyllyn": 50,
             "rarecore": 10
         }
     },
@@ -194,92 +192,99 @@
             "pickaxe_7": 1,
             "rarecore": 20,
             "manyllyn": 100,
-            "steel": 50
+            "steel": 500
         }
     },
-
     {
         "item": "pole_0",
         "unlocked": true,
         "ingredients": {
             "rope": 10,
-            "wood": 100
+            "wood": 200
         }
     },
     {
         "item": "pole_1",
         "unlocked": true,
         "ingredients": {
+            "pole_0": 1,
             "rope": 20,
-            "rock": 100
+            "rock": 300
         }
     },
     {
         "item": "pole_2",
         "unlocked": true,
         "ingredients": {
-            "rope": 30,
-            "iron": 100
+            "pole_1": 1,
+            "rope": 60,
+            "iron": 300
         }
     },
     {
         "item": "pole_3",
         "unlocked": true,
         "ingredients": {
-            "rope": 40,
+            "pole_2": 1,
+            "rope": 100,
             "iron": 100,
-            "steel": 10
+            "steel": 50
         }
     },
     {
         "item": "pole_4",
         "unlocked": true,
         "ingredients": {
-            "rope": 50,
-            "steel": 50
+            "pole_3": 1,
+            "rope": 200,
+            "steel": 500
         }
     },
     {
         "item": "pole_5",
         "unlocked": true,
         "ingredients": {
-            "rope": 60,
-            "rarecore":1,
-            "diamond": 5
+            "pole_4": 1,
+            "rope": 250,
+            "rarecore": 5,
+            "diamond": 75
         }
     },
     {
         "item": "pole_6",
         "unlocked": true,
         "ingredients": {
-                "rope": 70,
-                "diamond": 30,
-                "rarecore": 4
+            "pole_5": 1,
+            "rope": 300,
+            "diamond": 100,
+            "rarecore": 10
         }
     },
     {
         "item": "pole_7",
         "unlocked": true,
         "ingredients": {
-            "rarecore": 10,
-            "diamond": 30,
-            "manyllyn": 5
+            "pole_6": 1,
+            "rarecore": 20,
+            "diamond": 200,
+            "manyllyn": 200
         }
     },
     {
         "item": "pole_8",
         "unlocked": true,
         "ingredients": {
-            "rope": 90,
-            "manyllyn": 50,
-            "rarecore": 20
+            "pole_7": 1,
+            "rope": 900,
+            "manyllyn": 500,
+            "rarecore": 50
         }
     },
     {
         "item": "armor_0",
         "unlocked": true,
         "ingredients": {
-            "iron": 10
+            "iron": 40
         }
     },
     {
@@ -287,8 +292,8 @@
         "unlocked": true,
         "ingredients": {
             "armor_0": 1,
-            "iron": 20,
-            "steel": 5
+            "iron": 70,
+            "steel": 10
         }
     },
     {
@@ -296,7 +301,7 @@
         "unlocked": true,
         "ingredients": {
             "armor_1": 1,
-            "steel": 20
+            "steel": 200
         }
     },
     {
@@ -304,8 +309,9 @@
         "unlocked": true,
         "ingredients": {
             "armor_2": 1,
-            "steel": 30,
-            "diamond": 5
+            "steel": 300,
+            "diamond": 50,
+            "corruptedarmor": 50
         }
     },
     {
@@ -313,8 +319,9 @@
         "unlocked": true,
         "ingredients": {
             "armor_3": 1,
-            "rarecore": 2,
-            "diamond": 5
+            "rarecore": 5,
+            "diamond": 75,
+            "corruptedarmor": 75
         }
     },
     {
@@ -322,11 +329,11 @@
         "unlocked": true,
         "ingredients": {
             "armor_4": 1,
-            "rarecore": 10,
-            "manyllyn": 50
+            "rarecore": 20,
+            "manyllyn": 200,
+            "corruptedarmor": 125
         }
     },
-
     {
         "item": "sword_0",
         "unlocked": true,
@@ -341,7 +348,7 @@
         "ingredients": {
             "sword_0": 1,
             "wood": 50,
-            "iron": 25
+            "iron": 50
         }
     },
     {
@@ -349,7 +356,7 @@
         "unlocked": true,
         "ingredients": {
             "sword_1": 1,
-            "iron": 30,
+            "iron": 50,
             "rock": 50,
             "wood": 200
         }
@@ -359,8 +366,8 @@
         "unlocked": true,
         "ingredients": {
             "sword_2": 1,
-            "steel": 15,
-            "rock": 50
+            "steel": 200,
+            "rock": 100
         }
     },
     {
@@ -368,10 +375,10 @@
         "unlocked": true,
         "ingredients": {
             "sword_3": 1,
-            "steel": 30,
-            "diamond": 1,
-            "iron": 10,
-            "wood":50
+            "steel": 300,
+            "diamond": 10,
+            "iron": 25,
+            "wood": 50
         }
     },
     {
@@ -379,8 +386,8 @@
         "unlocked": true,
         "ingredients": {
             "sword_4": 1,
-            "diamond": 5,
-            "rarecore": 1
+            "diamond": 50,
+            "rarecore": 5
         }
     },
     {
@@ -388,8 +395,8 @@
         "unlocked": true,
         "ingredients": {
             "sword_5": 1,
-            "diamond": 15,
-            "rarecore": 5
+            "diamond": 150,
+            "rarecore": 30
         }
     },
     {
@@ -397,18 +404,18 @@
         "unlocked": true,
         "ingredients": {
             "sword_6": 1,
-            "rarecore": 20,
-            "manyllyn": 5,
-            "diamond": 20
+            "rarecore": 40,
+            "manyllyn": 500,
+            "diamond": 200
         }
     },
     {
         "item": "sword_8",
         "unlocked": true,
         "ingredients": {
-            "sword_0": 1,
-            "legendarycore": 2,
-            "manyllyn": 50
+            "sword_7": 1,
+            "legendarycore": 1,
+            "manyllyn": 1000
         }
     }
 ]
