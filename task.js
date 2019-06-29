@@ -85,7 +85,7 @@ function runTask(data) {
             var rand = Math.random();
             var item_type = "";
             
-            if (rand > dungeon.fromInternal(dInt).loot[i]*items.fromInternal(data.inventory.equipped.Sword).mult) item_type = i;
+            if (rand < dungeon.fromInternal(dInt).loot[i]*items.fromInternal(data.inventory.equipped.Sword).mult) item_type = i;
             data.task = newString;
             if (typeof item_type === 'string' && item_type !== "") {
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
