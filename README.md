@@ -24,4 +24,3 @@ Test Server/Bug Reports/Questions:https://discord.gg/uBXwveQ
 * Open terminal and navigate to the root directory of the project.
   - Type in `npm i`
   - Type in `node main`
-* Join the Discord to test it if you have any problems, or any questions!
