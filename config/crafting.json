@@ -7,6 +7,86 @@
         }
     },
     {
+        "item": "pole_0",
+        "unlocked": true,
+        "ingredients": {
+            "rope": 10,
+            "wood": 100
+        }
+    },
+    {
+        "item": "pole_1",
+        "unlocked": true,
+        "ingredients": {
+            "rope": 20,
+            "stone": 100
+        }
+    },
+    {
+        "item": "pole_2",
+        "unlocked": true,
+        "ingredients": {
+            "rope": 30,
+            "iron": 100
+        }
+    },
+    {
+        "item": "pole_3",
+        "unlocked": true,
+        "ingredients": {
+            "rope": 40,
+            "iron": 100,
+            "steel": 10
+        }
+    },
+    {
+        "item": "pole_4",
+        "unlocked": true,
+        "ingredients": {
+            "rope": 50,
+            "steel": 50
+        }
+    },
+    {
+        "item": "pole_5",
+        "unlocked": true,
+        "ingredients": {
+            "rope": 60,
+            "rarecore":1,
+            "diamond": 5
+        }
+    },
+    {
+        "item": "pole_6",
+        "unlocked": true,
+        "ingredients": {
+                "rope": 70,
+                "diamond": 30,
+                "rarecore": 4
+        }
+    },
+    {
+        "item": "pole_7",
+        "unlocked": true,
+        "ingredients": {
+            "rarecore": 10,
+            "diamond": 30,
+            "manyllyn": 5
+        }
+    },
+    {
+        "item": "pole_8",
+        "unlocked": true,
+        "ingredients": {
+            "rope": 90,
+            "manyllyn": 50,
+            "rarecore": 20
+        }
+    },
+    
+    
+
+    {
         "item": "pickaxe_1",
         "unlocked": false,
         "ingredients": {
