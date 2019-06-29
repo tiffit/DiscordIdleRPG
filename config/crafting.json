@@ -1,11 +1,165 @@
 [
     {
-        "item": "pickaxe_0",
+        "item": "axe_0",
+        "unlocked": true,
+        "ingredients": {
+            "wood": 20,
+            "rock": 20
+        }
+    },
+    {
+        "item": "axe_1",
         "unlocked": true,
         "ingredients": {
             "wood": 15
         }
     },
+    {
+        "item": "axe_2",
+        "unlocked": true,
+        "ingredients": {
+            "wood": 30,
+            "rock": 15
+        }
+    },
+    {
+        "item": "axe_3",
+        "unlocked": true,
+        "ingredients": {
+            "iron": 15,
+            "rock": 20,
+            "wood": 50
+        }
+    },
+    {
+        "item": "axe_4",
+        "unlocked": true,
+        "ingredients": {
+            "steel": 15,
+            "wood": 50
+        }
+    },
+    {
+        "item": "axe_5",
+        "unlocked": true,
+        "ingredients": {
+            "diamond": 15,
+            "rarecore": 1
+        }
+    },
+    {
+        "item": "axe_6",
+        "unlocked": true,
+        "ingredients": {
+            "rarecore": 4,
+            "manyllyn": 10
+        }
+    },
+    {
+        "item": "axe_7",
+        "unlocked": true,
+        "ingredients": {
+            "rarecore": 10,
+            "manyllyn": 10,
+            "steel": 500
+        }
+    },
+    {
+        "item": "axe_8",
+        "unlocked": true,
+        "ingredients": {
+            "rarecore": 20,
+            "manyllyn": 100,
+            "steel": 50
+        }
+    },
+
+    {
+        "item": "pickaxe_0",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_0": 1,
+            "wood": 20,
+            "rock": 20
+        }
+    },
+    {
+        "item": "pickaxe_1",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_0": 1,
+            "wood": 35,
+            "rock": 20
+        }
+    },
+    {
+        "item": "pickaxe_2",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_1": 1,
+            "wood": 50,
+            "iron": 15,
+            "rock": 20
+        }
+    },
+    {
+        "item": "pickaxe_3",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_2": 1,
+            "iron": 30,
+            "rock": 50,
+            "wood": 200
+        }
+    },
+    {
+        "item": "pickaxe_4",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_3": 1,
+            "steel": 30,
+            "wood": 300
+        }
+    },
+    {
+        "item": "pickaxe_5",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_4": 1,
+            "diamond": 50,
+            "rarecore": 1
+        }
+    },
+    {
+        "item": "pickaxe_6",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_5": 1,
+            "manyllyn": 20,
+            "rarecore": 4
+        }
+    },
+    {
+        "item": "pickaxe_7",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_6": 1,
+            "steel": 500,
+            "manyllyn": 10,
+            "rarecore": 10
+        }
+    },
+    {
+        "item": "pickaxe_8",
+        "unlocked": true,
+        "ingredients": {
+            "pickaxe_7": 1,
+            "rarecore": 20,
+            "manyllyn": 100,
+            "steel": 50
+        }
+    },
+
     {
         "item": "pole_0",
         "unlocked": true,
@@ -81,18 +235,6 @@
             "rope": 90,
             "manyllyn": 50,
             "rarecore": 20
-        }
-    },
-    
-    
-
-    {
-        "item": "pickaxe_1",
-        "unlocked": false,
-        "ingredients": {
-            "pickaxe_0": 1,
-            "wood": 20,
-            "rock": 20
         }
     },
     {
