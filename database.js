@@ -54,13 +54,9 @@ exports.getAllUsers = (callback) => {
  */
 exports.insertUserObj = (userObj) => {
     var query = `INSERT INTO users (user, guild, inventory, backpack, perks) VALUES ?`
-    var defaultInventory = {
-        equipped: {
-            Axe: "axe_0"
-        }
-    }
+
     values = [
-        [userObj.user, userObj.guild, JSON.stringify(defaultInventory), "{}", "{}"]
+        [userObj.user, userObj.guild, JSON.stringify(userObj.inventory), "{}", "{}"]
     ]
     connection.query(query, [values], (err, res) => {
         if (err) throw err;
