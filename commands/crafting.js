@@ -107,6 +107,7 @@ exports.run = async function (discord, bot, args, member, channel) {
             var ingKeys = Object.keys(recipe.ingredients);
             for (var k = 0; k < ingKeys.length; k++) {
                 var ing = itemloader.fromInternal(ingKeys[k]);
+                console.log(ingKeys[k]);
                 value += `${ing.name} x${recipe.ingredients[ingKeys[k]]}\n`;
             }
             embed.addField(itemloader.fromInternal(recipe.item).name + (crafting.unlocked(recipe, data) ? "" : "🔒"), value, true);

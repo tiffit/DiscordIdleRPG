@@ -101,6 +101,20 @@
         "value": 1000
     },
     {
+        "internal": "steel",
+        "name": "Steel",
+        "type": "Material",
+        "description": "TODO",
+        "value": 0
+    },
+    {
+        "internal": "manyllyn",
+        "name": "Manyllyn",
+        "type": "Material",
+        "description": "This material feels otherworldly.",
+        "value": 75
+    },
+    {
         "internal": "spoiledfood",
         "name": "Spoiled Food",
         "type": "Heal",
