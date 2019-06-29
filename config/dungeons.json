@@ -44,10 +44,10 @@
         }
     },
     {
-        "internal": "mountains",
-        "name": "Icy Mountains",
-        "desc": "A hazardous mountain high in the sky. Who knows what creatures live here.",
-        "tier": 3,
+        "internal": "mansion",
+        "name": "Abandoned Mansion",
+        "desc": "A decrepit mansion that has long been forgotten about, yet you still hear noises coming from within.",
+        "tier": 4,
         "hp": {
             "max": 100,
             "min": 250

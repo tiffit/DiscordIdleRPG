@@ -77,7 +77,7 @@
         "tier": 8,
         "type": "Pickaxe",
         "description": "Approaching the quarry, you can feel the rocks tremble in fear from the power of this drill.",
-        "speed": 50,
+        "speed": 35,
         "value": 750
     }
 ]
