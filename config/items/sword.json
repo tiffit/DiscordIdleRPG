@@ -1,10 +1,74 @@
 [
     {
         "internal": "sword_0",
-        "name": "Test Sword",
+        "name": "Stone sword",
+        "type": "Sword",
+        "description": "A chipped, ameteur sword.",
+        "value": 3,
+        "mult": 1.0
+    },
+    {
+        "internal": "sword_1",
+        "name": "Imperfect Iron Sword",
+        "type": "Sword",
+        "description": "A propper swingin' sword.",
+        "value": 15,
+        "mult": 1.05
+    },
+    {
+        "internal": "sword_2",
+        "name": "Proper Iron Sword",
+        "type": "Sword",
+        "description": "A *mighty* proper swingin' sword.",
+        "value": 25,
+        "mult": 1.10
+    },
+    {
+        "internal": "sword_3",
+        "name": "Steel sword",
         "type": "Sword",
         "description": "TODO",
-        "value": 3,
-        "mult": 1.05
+        "value": 40,
+        "mult": 1.20
+    },
+    {
+        "internal": "sword_4",
+        "name": "Perfect Sword",
+        "type": "Sword",
+        "description": "TODO",
+        "value": 55,
+        "mult": 1.40
+    },
+    {
+        "internal": "sword_5",
+        "name": "Diamond Tipped Sword",
+        "type": "Sword",
+        "description": "TODO",
+        "value": 65,
+        "mult": 1.55
+    },
+    {
+        "internal": "sword_6",
+        "name": "Diamond Sword",
+        "type": "Sword",
+        "description": "TODO",
+        "value": 80,
+        "mult": 1.75
+    },
+    {
+        "internal": "sword_7",
+        "name": "Manyllyn Sword",
+        "type": "Sword",
+        "description": "A sword forged in the High Forges, made for only those who are worthy.",
+        "value": 90,
+        "mult": 1.85
+    },
+    {
+        "internal": "sword_8",
+        "name": "Excalibur",
+        "type": "Sword",
+        "description": "The sword of an ancient king, who long ago united the nations.",
+        "value": 200,
+        "mult": 2.0
     }
 ]
