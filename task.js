@@ -89,6 +89,11 @@ function runTask(data) {
             data.task = newString;
             if (typeof item_type === 'string' && item_type !== "") {
                 utils.addItem(data.backpack, items.fromInternal(item_type), 1);
+                if (utils.getTotalCount(data.backpack) >= utils.getBackpackStorage(data)) {
+                    data.task = "idle";
+                    database.updateUserObj(data);
+                    return;
+                }
             }
         }
         database.updateUserObj(data);
