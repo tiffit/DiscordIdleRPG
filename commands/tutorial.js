@@ -24,6 +24,10 @@ exports.run = async function (discord, bot, args, member, channel) {
             text: `Ouch, you don't have anything to sell? Well not to worry, tasks are here! To progress in this game, you must use tasks. \n There are 2 types of tasks. \`Dungeons\`, which drop rare loot but uncommon, and \`Tasks\`, which drop consistent items every minute, which a chance at rare items. \n The three types of \`Task\` are \`${main.properties.prefix}mining\`, \`${main.properties.prefix}fishing\`, \`${main.properties.prefix}woodcutting\`. \n To start off with, you will be woodcutting. Once you have wood, sell it in the shop and buy yourself an upgrade!`
         },
         {
+            title: `Crafting`,
+            text: `To craft, do \`${main.properties.prefix}inventory\`. You mat notice some recipes are locked! To unlock these, buy and use a blueprint from the shop!`
+        },
+        {
             title: `Inventory`,
             text: `To see your inventory, do \`${main.properties.prefix}inventory\`. You may notice that after a minute your items haven't entered your inventory. Don't worry, they're in your adventuring \`${main.properties.prefix}backpack\`! \n To move all items from your backpack (which has lower storage space), click on the emoji under the output the command gives you.`
         },
