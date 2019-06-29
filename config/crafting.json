@@ -78,7 +78,6 @@
         "item": "pickaxe_0",
         "unlocked": true,
         "ingredients": {
-            "pickaxe_0": 1,
             "wood": 20,
             "rock": 20
         }
@@ -285,6 +284,91 @@
         "ingredients": {
             "armor_4": 1,
             "rarecore": 10,
+            "manyllyn": 50
+        }
+    },
+
+    {
+        "item": "sword_0",
+        "unlocked": true,
+        "ingredients": {
+            "wood": 25,
+            "rock": 50
+        }
+    },
+    {
+        "item": "sword_1",
+        "unlocked": true,
+        "ingredients": {
+            "sword_0": 1,
+            "wood": 50,
+            "iron": 25
+        }
+    },
+    {
+        "item": "sword_2",
+        "unlocked": true,
+        "ingredients": {
+            "sword_1": 1,
+            "iron": 30,
+            "rock": 50,
+            "wood": 200
+        }
+    },
+    {
+        "item": "sword_3",
+        "unlocked": true,
+        "ingredients": {
+            "sword_2": 1,
+            "steel": 15,
+            "rock": 50
+        }
+    },
+    {
+        "item": "sword_4",
+        "unlocked": true,
+        "ingredients": {
+            "sword_3": 1,
+            "steel": 30,
+            "diamond": 1,
+            "iron": 10,
+            "wood":50
+        }
+    },
+    {
+        "item": "sword_5",
+        "unlocked": true,
+        "ingredients": {
+            "sword_4": 1,
+            "diamond": 5,
+            "rarecore": 1
+        }
+    },
+    {
+        "item": "sword_6",
+        "unlocked": true,
+        "ingredients": {
+            "sword_5": 1,
+            "diamond": 15,
+            "rarecore": 5
+        }
+    },
+    {
+        "item": "sword_7",
+        "unlocked": true,
+        "ingredients": {
+            "sword_6": 1,
+            "rarecore": 20,
+            "manyllyn": 5,
+            "diamond": 20
+        }
+    },
+    {
+        "item": "sword_8",
+        "unlocked": true,
+        "ingredients": {
+            "sword_0": 1,
+            "legendarycore": 2,
             "manyllyn": 50
         }
     }
