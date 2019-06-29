@@ -1,5 +1,44 @@
 [
     {
+        "item": "steel",
+        "unlocked": false,
+        "ingredients": {
+            "wood": 1,
+            "iron": 1
+        }
+    },
+    {
+        "item": "manyllyn",
+        "unlocked": false,
+        "ingredients": {
+            "strengonine": 2,
+            "bluemetal": 1
+        }
+    },
+    {
+        "item": "fishstew",
+        "unlocked": false,
+        "ingredients": {
+            "fish": 30
+        }
+    },
+    {
+        "item": "fishmeal",
+        "unlocked": false,
+        "ingredients": {
+            "fish": 100
+        }
+    },
+    {
+        "item": "fishfeast",
+        "unlocked": false,
+        "ingredients": {
+            "fish": 1000
+        }
+    },
+    
+
+    {
         "item": "axe_0",
         "unlocked": true,
         "ingredients": {
