@@ -31,7 +31,7 @@
         "name": "Strong Iron Pickaxe",
         "tier": 3,
         "type": "Pickaxe",
-        "description": "Forged by an experienced blacksmith, this pickaxe can strike stone with no issue.",
+        "description": "This pickaxe can strike stone with no issue.",
         "speed": 7,
         "value": 60
     },
@@ -58,7 +58,7 @@
         "name": "Manyllyn Pickaxe",
         "tier": 6,
         "type": "Pickaxe",
-        "description": "Crafted by those in the upper most echelon of metalsmiths.",
+        "description": "Utilizing a metal that only the most experienced blacksmithes can handle, you craft this masterpiece..",
         "speed": 20,
         "value": 250
     },

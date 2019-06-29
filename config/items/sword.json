@@ -27,7 +27,7 @@
         "internal": "sword_3",
         "name": "Steel sword",
         "type": "Sword",
-        "description": "TODO",
+        "description": "Dabbling in a new metal, you find this one to be much sturdier and efficient than the last.",
         "value": 40,
         "mult": 1.20
     },
@@ -35,7 +35,7 @@
         "internal": "sword_4",
         "name": "Perfect Sword",
         "type": "Sword",
-        "description": "TODO",
+        "description": "Your skill is finally perfected in terms of steelforging. This is the fruit of that labor.",
         "value": 55,
         "mult": 1.40
     },
@@ -43,7 +43,7 @@
         "internal": "sword_5",
         "name": "Diamond Tipped Sword",
         "type": "Sword",
-        "description": "TODO",
+        "description": "A very reasonable application of diamond to a tool.",
         "value": 65,
         "mult": 1.55
     },
@@ -51,7 +51,7 @@
         "internal": "sword_6",
         "name": "Diamond Sword",
         "type": "Sword",
-        "description": "TODO",
+        "description": "An extremely expensive sword. At least it's sharp and difficult to break.",
         "value": 80,
         "mult": 1.75
     },
@@ -59,7 +59,7 @@
         "internal": "sword_7",
         "name": "Manyllyn Sword",
         "type": "Sword",
-        "description": "A sword forged in the High Forges, made for only those who are worthy.",
+        "description": "After trecking through the snow, you finally create this in the High Forges, which can only be used by those who are worthy.",
         "value": 90,
         "mult": 1.85
     },

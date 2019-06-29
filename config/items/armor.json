@@ -19,7 +19,7 @@
         "internal": "armor_2",
         "name": "Steel Armor",
         "type": "Armor",
-        "description": "Armor forged by an experienced blacksmith.",
+        "description": "Armor that looks like it was forged by an experienced blacksmith.",
         "value": 25,
         "hp": 300
     },
@@ -43,7 +43,7 @@
         "internal": "armor_5",
         "name": "Manyllyn Armor",
         "type": "Armor",
-        "description": "For the richest among us, forged by the best among us.",
+        "description": "For the richest among us, forged by the best among us. You. I'm talking about you. You're doing amazing.",
         "value": 120,
         "hp": 850
     }
