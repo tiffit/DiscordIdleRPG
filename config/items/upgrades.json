@@ -45,7 +45,7 @@
     },
     {
         "internal": "upgrade_inventory_0",
-        "name": "Small inventory",
+        "name": "Small Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 750.",
         "value": 0,
@@ -56,7 +56,7 @@
     },
     {
         "internal": "upgrade_inventory_1",
-        "name": "Medium inventory",
+        "name": "Medium Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 2000.",
         "value": 0,
@@ -67,7 +67,7 @@
     },
     {
         "internal": "upgrade_inventory_2",
-        "name": "Large inventory",
+        "name": "Large Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 5000.",
         "value": 0,
@@ -78,7 +78,7 @@
     },
     {
         "internal": "upgrade_inventory_3",
-        "name": "Gigantic inventory",
+        "name": "Gigantic Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 20000.",
         "value": 0,

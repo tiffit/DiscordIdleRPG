@@ -13,7 +13,7 @@
         "type": "Armor",
         "description": "Armor, but you know what you're doing this time!",
         "value": 10,
-        "hp": 50
+        "hp": 75
     },
     {
         "internal": "armor_2",
@@ -21,7 +21,7 @@
         "type": "Armor",
         "description": "Armor forged by an experienced blacksmith.",
         "value": 25,
-        "hp": 85
+        "hp": 300
     },
     {
         "internal": "armor_3",
@@ -29,7 +29,7 @@
         "type": "Armor",
         "description": "Steel armor, enhanced with diamonds.",
         "value": 40,
-        "hp": 115
+        "hp": 500
     },
     {
         "internal": "armor_4",
@@ -37,7 +37,7 @@
         "type": "Armor",
         "description": "Straight bling, baby.",
         "value": 70,
-        "hp": 130
+        "hp": 700
     },
     {
         "internal": "armor_5",
@@ -45,6 +45,6 @@
         "type": "Armor",
         "description": "For the richest among us, forged by the best among us.",
         "value": 120,
-        "hp": 175
+        "hp": 850
     }
 ]

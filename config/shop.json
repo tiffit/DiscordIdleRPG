@@ -1,26 +1,24 @@
 {
-    "Axes": {
-        "axe_1": 50,
-        "axe_2": 60,
-        "axe_3": 70,
-        "axe_4": 80,
-        "axe_5": 90,
-        "axe_6": 100,
-        "axe_7": 110,
-        "axe_8": 120
-    },
-    "Pickaxes": {
-        "pickaxe_0": 30,
-        "pickaxe_1": 50,
-        "pickaxe_2": 60,
-        "pickaxe_3": 70,
-        "pickaxe_4": 80,
-        "pickaxe_5": 90,
-        "pickaxe_6": 100,
-        "pickaxe_7": 110,
-        "pickaxe_8": 120
-    },
     "Blueprints": {
-        "bp_pickaxe_1": 30
+        "bp_steel": 200,
+        "bp_manyllyn": 5000,
+        "bp_fishstew": 300,
+        "bp_fishmeal": 7000,
+        "bp_fishfeast": 20000
+    },
+    "Upgrades": {
+        "upgrade_backpack_0": 1000,
+        "upgrade_backpack_1": 12000,
+        "upgrade_backpack_2": 30000,
+        "upgrade_backpack_3": 100000,
+        "upgrade_inventory_0": 750,
+        "upgrade_inventory_1": 10000,
+        "upgrade_inventory_2": 25000,
+        "upgrade_inventory_3": 90000
+    },
+    "Health Items": {
+        "tinypotion": 200,
+        "smallpotion": 3000,
+        "largepotion": 15000
     }
 }

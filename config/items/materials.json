@@ -145,5 +145,29 @@
         "description": "Who doesn't like an entire feast made purely out of fish.",
         "value": 1000,
         "heal": 450
+    },
+    {
+        "internal": "tinypotion",
+        "name": "Tiny Potion",
+        "type": "Heal",
+        "description": "A tiny potion that heals a tiny amount of HP.",
+        "value": 0,
+        "heal": 15
+    },
+    {
+        "internal": "smallpotion",
+        "name": "Small Potion",
+        "type": "Heal",
+        "description": "A small potion that heals a small amount of HP.",
+        "value": 0,
+        "heal": 50
+    },
+    {
+        "internal": "largepotion",
+        "name": "Large Potion",
+        "type": "Heal",
+        "description": "A large potion that heals a large amount of HP.",
+        "value": 0,
+        "heal": 600
     }
 ]

@@ -10,10 +10,10 @@
     },
     {
         "internal": "axe_1",
-        "name": "Old Axe",
+        "name": "Unstable Axe",
         "tier": 1,
         "type": "Axe",
-        "description": "An old axe that has definitely seen better day, but at least it still works.",
+        "description": "An old axe that is very crudely made, but at least it still works.",
         "speed": 2,
         "value": 15
     },
@@ -31,7 +31,7 @@
         "name": "Sharp Axe",
         "tier": 3,
         "type": "Axe",
-        "description": "An axe that was sharpened by an experienced blacksmith.",
+        "description": "An axe that was sharpened finely.",
         "speed": 7,
         "value": 60
     },
@@ -58,7 +58,7 @@
         "name": "Impeccable Axe",
         "tier": 6,
         "type": "Axe",
-        "description": "Forged by the best blacksmiths known to man, this axe cuts wood like butter.",
+        "description": "This axe cuts wood like butter.",
         "speed": 20,
         "value": 250
     },
@@ -76,7 +76,7 @@
         "name": "Forest's Doom",
         "tier": 8,
         "type": "Axe",
-        "description": "Who made this and where did it come from? Who knows! With one big swing, this axe fells entire forests.",
+        "description": "With one big swing, this axe fells entire forests.",
         "speed": 50,
         "value": 750
     }

@@ -17,6 +17,9 @@ exports.run = async function (discord, bot, args, member, channel) {
             .addField("Type", item.type, true);
         if (typeof item.tier !== 'undefined') embed.addField("Tier", item.tier, true);
         if (typeof item.speed !== 'undefined') embed.addField("Speed", item.speed, true);
+        if (typeof item.heal !== 'undefined') embed.addField("Heal", item.heal, true);
+        if (typeof item.hp !== 'undefined') embed.addField("HP", item.hp, true);
+        if (typeof item.mult !== 'undefined') embed.addField("Loot Multiplier", item.mult, true);
         embed.addField("Sell Value", item.value + " Gold", true);
         channel.send(embed);
     }else{

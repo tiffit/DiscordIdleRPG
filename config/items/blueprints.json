@@ -1,10 +1,42 @@
 [
     {
-        "internal": "bp_pickaxe_1",
-        "name": "Stone Pickaxe BP",
+        "internal": "bp_steel",
+        "name": "Steel BP",
         "type": "Blueprint",
-        "description": "Unlocks the 'Stone Pickaxe' crafting recipe.",
+        "description": "Unlocks the 'Steel' crafting recipe.",
         "value": 0,
-        "unlock": "pickaxe_1"
+        "unlock": "steel"
+    },
+    {
+        "internal": "bp_manyllyn",
+        "name": "Manyllyn BP",
+        "type": "Blueprint",
+        "description": "Unlocks the 'Manyllyn' crafting recipe.",
+        "value": 0,
+        "unlock": "manyllyn"
+    },
+    {
+        "internal": "bp_fishstew",
+        "name": "Fish Stew BP",
+        "type": "Blueprint",
+        "description": "Unlocks the 'Fish Stew' crafting recipe.",
+        "value": 0,
+        "unlock": "fishstew"
+    },
+    {
+        "internal": "bp_fishmeal",
+        "name": "Fish Meal BP",
+        "type": "Blueprint",
+        "description": "Unlocks the 'Fish Meal' crafting recipe.",
+        "value": 0,
+        "unlock": "fishmeal"
+    },
+    {
+        "internal": "bp_fishfeast",
+        "name": "Fish Feast BP",
+        "type": "Blueprint",
+        "description": "Unlocks the 'Fish Feast' crafting recipe.",
+        "value": 0,
+        "unlock": "fishfeast"
     }
 ]
