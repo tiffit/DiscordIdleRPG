@@ -41,5 +41,71 @@
         "type": "Material",
         "description": "An extremely strong and rare mineral found underground.",
         "value": 35
+    },
+    {
+        "internal": "rope",
+        "name": "Rope",
+        "type": "Material",
+        "description": "Obtained from the Pirate Cave and Icy Mountains.",
+        "value": 1
+    },
+    {
+        "internal": "piraterum",
+        "name": "Pirate Rum",
+        "type": "Material",
+        "description": "Obtained from the Pirate Cave. You don't want to drink this...",
+        "value": 75
+    },
+    {
+        "internal": "rarecore",
+        "name": "Rare Core",
+        "type": "Material",
+        "description": "Obtained from the Murky Swamp, Icy Mountains, and Abandoned Mansion.",
+        "value": 20
+    },
+    {
+        "internal": "slimeresin",
+        "name": "Slime Resin",
+        "type": "Heal",
+        "description": "Obtained from the Murky Swamp.",
+        "value": 5,
+        "heal": 7
+    },
+    {
+        "internal": "bluemetal",
+        "name": "Blue Metal",
+        "type": "Material",
+        "description": "Obtained from the Icy Mountains and Abandoned Mansion.",
+        "value": 40
+    },
+    {
+        "internal": "frozenmeat",
+        "name": "Frozen Meat",
+        "type": "Heal",
+        "description": "Obtained from the Icy Mountains.",
+        "value": 30,
+        "heal": 15
+    },
+    {
+        "internal": "corruptedarmor",
+        "name": "Corrupted Armor Piece",
+        "type": "Material",
+        "description": "Obtained from the Abandoned Mansion.",
+        "value": 60
+    },
+    {
+        "internal": "legendarycore",
+        "name": "Legendary Core",
+        "type": "Material",
+        "description": "Obtained from the Abandoned Mansion.",
+        "value": 1000
+    },
+    {
+        "internal": "spoiledfood",
+        "name": "Spoiled Food",
+        "type": "Heal",
+        "description": "Obtained from the Abandoned Mansion.",
+        "value": 70,
+        "heal": 200
     }
 ]

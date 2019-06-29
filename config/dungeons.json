@@ -1,13 +1,63 @@
-[{
-    "internal": "playground",
-    "name": "The Playground",
-    "desc": "Baby steps.",
-    "tier": 1,
-    "hp": {
-        "max": 5,
-        "min": 1
+[
+    {
+        "internal": "pcave",
+        "name": "Pirate Cave",
+        "desc": "An expansive cave system that a pirate clan uses to hide all their booty.",
+        "tier": 1,
+        "hp": {
+            "max": 5,
+            "min": 1
+        },
+        "loot": {
+            "rope": 0.3,
+            "piraterum": 0.001
+        }
     },
-    "loot": {
-         "diamond": 0.3
+    {
+        "internal": "swamp",
+        "name": "Murky Swamp",
+        "desc": "A dank and dangerous swamp filled with vile creatures.",
+        "tier": 2,
+        "hp": {
+            "max": 10,
+            "min": 25
+        },
+        "loot": {
+            "rarecore": 0.01,
+            "slimeresin": 0.05
+        }
+    },
+    {
+        "internal": "mountains",
+        "name": "Icy Mountains",
+        "desc": "A hazardous mountain high in the sky. Who knows what creatures live here.",
+        "tier": 3,
+        "hp": {
+            "max": 40,
+            "min": 70
+        },
+        "loot": {
+            "rope": 0.2,
+            "bluemetal": 0.2,
+            "rarecore": 0.03,
+            "frozenmeat": 0.3
+        }
+    },
+    {
+        "internal": "mountains",
+        "name": "Icy Mountains",
+        "desc": "A hazardous mountain high in the sky. Who knows what creatures live here.",
+        "tier": 3,
+        "hp": {
+            "max": 100,
+            "min": 250
+        },
+        "loot": {
+            "bluemetal": 0.1,
+            "rarecore": 0.05,
+            "corruptedarmor": 0.1,
+            "spoiledfood": 0.01,
+            "legendarycore": 0.00001
+        }
     }
-}]
+]
