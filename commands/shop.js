@@ -187,7 +187,7 @@ exports.run = async function (discord, bot, args, member, channel) {
             await msg.react('⬅');
             await msg.react('➡');
             const filter = (reaction, user) => reaction.emoji.name === '⬅' || '➡' && user.id === member.user.id;
-            const collector = msg.createReactionCollector(filter, { time: 15000 });
+            const collector = msg.createReactionCollector(filter, { time: 15000*100 });
             collector.on('collect', (r) => {
                 r.users.array().forEach(function(user){
                     if(!user.bot)r.remove(user);
