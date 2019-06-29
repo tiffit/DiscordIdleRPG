@@ -39,7 +39,7 @@ exports.run = async function (discord, bot, args, member, channel) {
                         util.addItem(data.inventory, old, 1);
                     }
                     embed = embed.addField("Old " + item.type, old ? old.name : "None", true)
-                            .addField("New " + item.type, item.name, true);
+                        .addField("New " + item.type, item.name, true);
                     channel.send(embed);
                     db.updateUserObj(data);
                 } else if (item.type === "Upgrade") {
@@ -80,8 +80,71 @@ exports.run = async function (discord, bot, args, member, channel) {
                     }
                     db.updateUserObj(data);
                 } else {
-                    channel.send(name + " is not a usable item!");
+                    let embed = new discord.RichEmbed()
+                        .setTimestamp()
+                        .setDescription(item.name + " is not a usable item!")
+                        .setAuthor("Inventory", bot.user.displayAvatarURL)
+                        .setTitle("Use Error")
+                        .setFooter(member.displayName, member.user.avatarURL)
+                        .setColor([168, 15, 15]);
+                    channel.send(embed);
                     return;
+                }
+                return;
+            } else if (args[0].toLowerCase() === 'unequip') {
+                var usage = `inventory unequip <item type>`;
+                if (args.length < 2) {
+                    util.syntaxError(discord, bot, member, channel, usage);
+                    return;
+                }
+                if (util.getTotalCount(data.inventory) + 1 > util.getInventoryStorage(data)) {
+                    let embed = new discord.RichEmbed()
+                        .setTimestamp()
+                        .setDescription(`You do not have inventory space!`)
+                        .setAuthor("Inventory", bot.user.displayAvatarURL)
+                        .setTitle("Uneqip Error")
+                        .setFooter(member.displayName, member.user.avatarURL)
+                        .setColor([168, 15, 15]);
+                    channel.send(embed);
+                    return;
+                }
+                var type = args.slice(1).join(" ").toLowerCase();
+                var typeFix = type === "axe" ? "Axe" : type === "pickaxe" ? "Pickaxe" : type === "fishing pole" ? "Fishing Pole" : type === "sword" ? "Sword" : type === "armor" ? "Armor" : undefined;
+                if (typeof typeFix != 'undefined') {
+                    if (!data.inventory.equipped[typeFix]) {
+                        let embed = new discord.RichEmbed()
+                            .setTimestamp()
+                            .setDescription(`You do not have any ${typeFix} equipped!`)
+                            .setAuthor("Inventory", bot.user.displayAvatarURL)
+                            .setTitle("Uneqip Error")
+                            .setFooter(member.displayName, member.user.avatarURL)
+                            .setColor([168, 15, 15]);
+                        channel.send(embed);
+                        return;
+                    }
+                    var item = itemloader.fromInternal(data.inventory.equipped[typeFix]);
+                    let embed = new discord.RichEmbed()
+                        .setTimestamp()
+                        .setColor([15, 168, 15])
+                        .setAuthor("Inventory", bot.user.displayAvatarURL)
+                        .setTitle("Item Unequipped")
+                        .setFooter(member.displayName, member.user.avatarURL)
+                        .addField("Type", typeFix, true)
+                        .addField("Item", item.name, true);
+                    channel.send(embed);
+                    util.addItem(data.inventory, item, 1);
+                    delete data.inventory.equipped[typeFix];
+                    db.updateUserObj(data);
+                    return;
+                } else {
+                    let embed = new discord.RichEmbed()
+                        .setTimestamp()
+                        .setDescription(`${type} is not a valid equipment type!`)
+                        .setAuthor("Inventory", bot.user.displayAvatarURL)
+                        .setTitle("Uneqip Error")
+                        .setFooter(member.displayName, member.user.avatarURL)
+                        .setColor([168, 15, 15]);
+                    channel.send(embed);
                 }
                 return;
             }
@@ -96,7 +159,7 @@ exports.run = async function (discord, bot, args, member, channel) {
             .setTimestamp()
             .setColor([24, 224, 200])
             .setAuthor("Inventory", bot.user.displayAvatarURL)
-            .setDescription(`Equip or use and item with \`${main.properties.prefix}inventory use <item name>\`.\nStorage: ${util.getTotalCount(data.inventory)}/${util.getInventoryStorage(data)}`)
+            .setDescription(`Equip or use and item with \`${main.properties.prefix}inventory use <item name>\`. Unequip with \`${main.properties.prefix}inventory uneqip <item type>\`.\nStorage: ${util.getTotalCount(data.inventory)}/${util.getInventoryStorage(data)}`)
             .setFooter(member.displayName, member.user.avatarURL)
             .addField("Equipment", equipment);
         var invStr = "";
