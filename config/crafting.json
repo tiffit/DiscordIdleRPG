@@ -14,5 +14,56 @@
             "wood": 20,
             "rock": 20
         }
+    },
+    {
+        "item": "armor_0",
+        "unlocked": true,
+        "ingredients": {
+            "iron": 10
+        }
+    },
+    {
+        "item": "armor_1",
+        "unlocked": true,
+        "ingredients": {
+            "armor_0": 1,
+            "iron": 20,
+            "steel": 5
+        }
+    },
+    {
+        "item": "armor_2",
+        "unlocked": true,
+        "ingredients": {
+            "armor_1": 1,
+            "steel": 20
+        }
+    },
+    {
+        "item": "armor_3",
+        "unlocked": true,
+        "ingredients": {
+            "armor_2": 1,
+            "steel": 30,
+            "diamond": 5
+        }
+    },
+    {
+        "item": "armor_4",
+        "unlocked": true,
+        "ingredients": {
+            "armor_3": 1,
+            "rarecore": 2,
+            "diamond": 5
+        }
+    },
+    {
+        "item": "armor_5",
+        "unlocked": true,
+        "ingredients": {
+            "armor_4": 1,
+            "rarecore": 10,
+            "manyllyn": 50
+        }
     }
 ]

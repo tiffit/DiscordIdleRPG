@@ -1,10 +1,50 @@
 [
     {
         "internal": "armor_0",
-        "name": "Wooden Armor",
+        "name": "Iron Armor",
         "type": "Armor",
-        "description": "TODO",
+        "description": "Trusty ol' iron. Forged in your own back yard.",
         "value": 3,
         "hp": 25
+    },
+    {
+        "internal": "armor_1",
+        "name": "Shiny Iron Armor",
+        "type": "Armor",
+        "description": "Armor, but you know what you're doing this time!",
+        "value": 10,
+        "hp": 50
+    },
+    {
+        "internal": "armor_2",
+        "name": "Steel Armor",
+        "type": "Armor",
+        "description": "Armor forged by an experienced blacksmith.",
+        "value": 25,
+        "hp": 85
+    },
+    {
+        "internal": "armor_3",
+        "name": "Diamond Enhanced Armor",
+        "type": "Armor",
+        "description": "Steel armor, enhanced with diamonds.",
+        "value": 40,
+        "hp": 115
+    },
+    {
+        "internal": "armor_4",
+        "name": "Diamond Armor",
+        "type": "Armor",
+        "description": "Straight bling, baby.",
+        "value": 70,
+        "hp": 130
+    },
+    {
+        "internal": "armor_5",
+        "name": "Manyllyn Armor",
+        "type": "Armor",
+        "description": "For the richest among us, forged by the best among us.",
+        "value": 120,
+        "hp": 175
     }
 ]
