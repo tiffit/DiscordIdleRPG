@@ -15,7 +15,8 @@ const cmdmap = new Map(
         ["crafting", require('./crafting')],
         ["fishing", require('./fishing')],
         ["idle", require('./idle')],
-        ["dungeoninfo", require('./dungeoninfo')]
+        ["dungeoninfo", require('./dungeoninfo')],
+        ["tutorial", require('./tutorial')]
     ]
 );
 
