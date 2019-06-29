@@ -19,8 +19,8 @@
         "desc": "A dank and dangerous swamp filled with vile creatures.",
         "tier": 2,
         "hp": {
-            "max": 10,
-            "min": 25
+            "max": 25,
+            "min": 10
         },
         "loot": {
             "rarecore": 0.01,
@@ -33,8 +33,8 @@
         "desc": "A hazardous mountain high in the sky. Who knows what creatures live here.",
         "tier": 3,
         "hp": {
-            "max": 40,
-            "min": 70
+            "min": 40,
+            "max": 70
         },
         "loot": {
             "rope": 0.2,
@@ -49,8 +49,8 @@
         "desc": "A decrepit mansion that has long been forgotten about, yet you still hear noises coming from within.",
         "tier": 4,
         "hp": {
-            "max": 100,
-            "min": 250
+            "min": 100,
+            "max": 250
         },
         "loot": {
             "bluemetal": 0.1,
