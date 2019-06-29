@@ -12,7 +12,7 @@
         "name": "Shiny Iron Armor",
         "type": "Armor",
         "description": "Armor, but you know what you're doing this time!",
-        "value": 10,
+        "value": 30,
         "hp": 75
     },
     {
@@ -20,7 +20,7 @@
         "name": "Steel Armor",
         "type": "Armor",
         "description": "Armor that looks like it was forged by an experienced blacksmith.",
-        "value": 25,
+        "value": 50,
         "hp": 300
     },
     {
@@ -28,7 +28,7 @@
         "name": "Diamond Enhanced Armor",
         "type": "Armor",
         "description": "Steel armor, enhanced with diamonds.",
-        "value": 40,
+        "value": 200,
         "hp": 500
     },
     {
@@ -36,7 +36,7 @@
         "name": "Diamond Armor",
         "type": "Armor",
         "description": "Straight bling, baby.",
-        "value": 70,
+        "value": 500,
         "hp": 700
     },
     {
@@ -44,7 +44,7 @@
         "name": "Manyllyn Armor",
         "type": "Armor",
         "description": "For the richest among us, forged by the best among us. You. I'm talking about you. You're doing amazing.",
-        "value": 120,
+        "value": 750,
         "hp": 850
     }
 ]

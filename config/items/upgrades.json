@@ -4,7 +4,7 @@
         "name": "Small Backpack",
         "type": "Upgrade",
         "description": "Increases max backpack size to 150.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_backpack",
             "tier": 0
@@ -15,7 +15,7 @@
         "name": "Medium Backpack",
         "type": "Upgrade",
         "description": "Increases max backpack size to 400.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_backpack",
             "tier": 1
@@ -26,7 +26,7 @@
         "name": "Large Backpack",
         "type": "Upgrade",
         "description": "Increases max backpack size to 1000.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_backpack",
             "tier": 2
@@ -37,7 +37,7 @@
         "name": "Gigantic Backpack",
         "type": "Upgrade",
         "description": "Increases max backpack size to 2500.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_backpack",
             "tier": 3
@@ -48,7 +48,7 @@
         "name": "Small Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 750.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_inventory",
             "tier": 0
@@ -59,7 +59,7 @@
         "name": "Medium Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 2000.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_inventory",
             "tier": 1
@@ -70,7 +70,7 @@
         "name": "Large Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 5000.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_inventory",
             "tier": 2
@@ -81,7 +81,7 @@
         "name": "Gigantic Crate",
         "type": "Upgrade",
         "description": "Increases max inventory size to 20000.",
-        "value": 0,
+        "value": 25,
         "use": {
             "type": "upgrade_inventory",
             "tier": 3

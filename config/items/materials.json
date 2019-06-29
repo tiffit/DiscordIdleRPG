@@ -104,8 +104,8 @@
         "internal": "steel",
         "name": "Steel",
         "type": "Material",
-        "description": "TODO",
-        "value": 0
+        "description": "A combination of iron and carbon.",
+        "value": 2
     },
     {
         "internal": "manyllyn",
@@ -151,7 +151,7 @@
         "name": "Tiny Potion",
         "type": "Heal",
         "description": "A tiny potion that heals a tiny amount of HP.",
-        "value": 0,
+        "value": 5,
         "heal": 15
     },
     {
@@ -159,7 +159,7 @@
         "name": "Small Potion",
         "type": "Heal",
         "description": "A small potion that heals a small amount of HP.",
-        "value": 0,
+        "value": 10,
         "heal": 50
     },
     {
@@ -167,7 +167,7 @@
         "name": "Large Potion",
         "type": "Heal",
         "description": "A large potion that heals a large amount of HP.",
-        "value": 0,
+        "value": 30,
         "heal": 600
     }
 ]

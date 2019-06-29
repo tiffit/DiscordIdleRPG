@@ -4,7 +4,7 @@
         "name": "Steel BP",
         "type": "Blueprint",
         "description": "Unlocks the 'Steel' crafting recipe.",
-        "value": 0,
+        "value": 10,
         "unlock": "steel"
     },
     {
@@ -12,7 +12,7 @@
         "name": "Manyllyn BP",
         "type": "Blueprint",
         "description": "Unlocks the 'Manyllyn' crafting recipe.",
-        "value": 0,
+        "value": 10,
         "unlock": "manyllyn"
     },
     {
@@ -20,7 +20,7 @@
         "name": "Fish Stew BP",
         "type": "Blueprint",
         "description": "Unlocks the 'Fish Stew' crafting recipe.",
-        "value": 0,
+        "value": 10,
         "unlock": "fishstew"
     },
     {
@@ -28,7 +28,7 @@
         "name": "Fish Meal BP",
         "type": "Blueprint",
         "description": "Unlocks the 'Fish Meal' crafting recipe.",
-        "value": 0,
+        "value": 10,
         "unlock": "fishmeal"
     },
     {
@@ -36,7 +36,7 @@
         "name": "Fish Feast BP",
         "type": "Blueprint",
         "description": "Unlocks the 'Fish Feast' crafting recipe.",
-        "value": 0,
+        "value": 20,
         "unlock": "fishfeast"
     }
 ]
