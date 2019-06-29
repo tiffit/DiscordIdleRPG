@@ -25,7 +25,7 @@ exports.run = async function (discord, bot, args, member, channel) {
         },
         {
             title: `Crafting`,
-            text: `To craft, do \`${main.properties.prefix}inventory\`. You mat notice some recipes are locked! To unlock these, buy and use a blueprint from the shop!`
+            text: `To craft, do \`${main.properties.prefix}crafting\`. You mat notice some recipes are locked! To unlock these, buy and use a blueprint from the shop!`
         },
         {
             title: `Inventory`,
