@@ -1,7 +1,9 @@
 # DiscordIdleRPG
 Discord Bot for Discord's 2019 Hackweek
+
 Test Server/Bug Reports/Questions:https://discord.gg/uBXwveQ
 
+Invite Link: https://discordapp.com/oauth2/authorize?client_id=592764215815831562&permissions=8256&scope=bot
 ## How to set up
 
 * Set up the MYSQL database. Create your database, then use this query to insert the table.
