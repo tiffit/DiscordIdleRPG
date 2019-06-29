@@ -121,5 +121,29 @@
         "description": "Obtained from the Abandoned Mansion.",
         "value": 70,
         "heal": 200
+    },
+    {
+        "internal": "fishstew",
+        "name": "Fish Stew",
+        "type": "Heal",
+        "description": "Small fish stew.",
+        "value": 30,
+        "heal": 10
+    },
+    {
+        "internal": "fishmeal",
+        "name": "Fish Meal",
+        "type": "Heal",
+        "description": "An entire meal made out of fish.",
+        "value": 100,
+        "heal": 40
+    },
+    {
+        "internal": "fishfeast",
+        "name": "Fish Feast",
+        "type": "Heal",
+        "description": "Who doesn't like an entire feast made purely out of fish.",
+        "value": 1000,
+        "heal": 450
     }
 ]
